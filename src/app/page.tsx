@@ -1,9 +1,18 @@
+import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
-    <main>
-      <Navbar />
-    </main>
+    <>
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <Hero />
+      </main>
+      <footer>
+        {/* Add a component */}
+      </footer>
+    </>
   );
 }
