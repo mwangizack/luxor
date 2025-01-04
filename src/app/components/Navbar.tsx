@@ -10,14 +10,17 @@ import { Cinzel } from "next/font/google";
 
 const cinzelFont = Cinzel({
   subsets: ["latin"],
-  weight: [ "600", "700"],
+  weight: ["600", "700"],
   style: ["normal"],
 });
 
 function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: "#0b3e27", padding: "5px 100px" }}>
+      <AppBar
+        position="static"
+        sx={{ backgroundColor: "#0b3e27", padding: "5px 100px" }}
+      >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           {/* Luxor Logo */}
           <Link
@@ -31,9 +34,9 @@ function Navbar() {
               textTransform: "none",
               "&:hover": {
                 cursor: "pointer",
-              }
+              },
             }}
-            onClick={() => {}}  // Add link to homepage
+            onClick={() => {}} // Add link to homepage
           >
             Luxor
           </Link>
@@ -43,14 +46,12 @@ function Navbar() {
             <Badge
               badgeContent={1} //Make it dynamic
               color="error"
-              sx={{
-                "& .MuiBadge-badge": {
-                  right: 1,
-                  top: 28,
-                },
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "right",
               }}
             >
-              <LocalMallOutlinedIcon fontSize="large" />
+              <LocalMallOutlinedIcon fontSize="medium" />
             </Badge>
           </IconButton>
         </Toolbar>
