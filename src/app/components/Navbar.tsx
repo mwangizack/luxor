@@ -19,7 +19,7 @@ function Navbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
         position="static"
-        sx={{ backgroundColor: "#0b3e27", padding: "5px 100px" }}
+        sx={{ backgroundColor: "secondary.main", padding: "5px 100px" }}
       >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           {/* Luxor Logo */}
@@ -30,7 +30,7 @@ function Navbar() {
               fontFamily: cinzelFont.className,
               fontWeight: "600",
               fontSize: "2rem",
-              color: "rgb(163, 126, 44)",
+              color: "primary",
               textTransform: "none",
               "&:hover": {
                 cursor: "pointer",
