@@ -1,17 +1,15 @@
-import { Autocomplete, TextField } from "@mui/material";
 import React from "react";
+import { Autocomplete, TextField } from "@mui/material";
 import { watches } from "../data/watches";
+import { useDispatch } from "react-redux";
+import { filterWatches } from "../store/reducers/cartSlice";
 
 function SearchInput() {
   const [searchValue, setSearchValue] = React.useState("");
+  const dispatch = useDispatch();
 
-  // Use Redux to manage the search state
   function handleSearch(value: string | null) {
-    if (value) {
-      const filteredWatches = watches.filter((watch) =>
-        watch.name.toLowerCase().includes(value.toLowerCase())
-      );
-    }
+    dispatch(filterWatches(value));
   }
 
   return (
