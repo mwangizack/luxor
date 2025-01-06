@@ -1,4 +1,4 @@
-interface Watch {
+export interface Watch {
   name: string;
   dial_size: string;
   material: string;
