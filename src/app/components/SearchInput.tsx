@@ -30,8 +30,10 @@ function SearchInput() {
         <TextField {...params} label="Search for watches" />
       )}
       sx={{
-        marginTop: "20px",
-        width: "20rem",
+        "& .MuiAutocomplete-inputRoot": {
+          width: "20rem",
+          height: "3rem",
+        },
       }}
     />
   );
