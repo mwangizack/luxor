@@ -1,7 +1,7 @@
 "use client";
 import { createSlice } from "@reduxjs/toolkit";
 import { watches } from "@/app/data/watches";
-import type { Watch } from "@/app/data/watches";
+import { Watch } from "@/app/data/watches";
 
 interface CartState {
   filteredWatches: Watch[];

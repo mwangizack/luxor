@@ -1,10 +1,11 @@
 "use client";
 import { configureStore } from "@reduxjs/toolkit";
+import cartSliceReducer from "./reducers/cartSlice";
 
 export const store = configureStore({
-    reducer: {
-        // Define your reducers here
-    },
+  reducer: {
+    cart: cartSliceReducer,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
