@@ -68,6 +68,7 @@ function Hero() {
       {/* Call to Action */}
       <Button
         variant="contained"
+        href="#content-section"
         disableElevation
         sx={{
           position: "absolute",

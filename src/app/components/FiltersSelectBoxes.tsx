@@ -88,6 +88,8 @@ function FiltersSelectBoxes() {
           <MenuItem value="black ceramic">Black ceramic</MenuItem>
         </Select>
       </FormControl>
+
+      {/* Bracelets */}
     </Box>
   );
 }
