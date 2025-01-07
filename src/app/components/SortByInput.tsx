@@ -6,13 +6,27 @@ import {
   MenuItem,
   Select,
 } from "@mui/material";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/store";
 
 function SortByInput() {
   const [sortBy, setSortBy] = React.useState("");
+  const watches = useSelector((state: RootState) => state.cart.watchesToShow);
 
   function handleChangeSortBy(event: React.ChangeEvent<HTMLSelectElement>) {
     setSortBy(event.target.value);
     // Handle sorting watches based on selected option
+    switch (sortBy) {
+        case "price descending":
+          watches.sort((a, b) => b.price - a.price);
+          break;
+        case "price ascending":
+          watches.sort((a, b) => a.price - b.price);
+          break;
+        default:
+          watches.sort((a, b) => a.id - b.id);
+          break;
+    }
   }
 
   return (

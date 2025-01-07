@@ -1,4 +1,5 @@
 export interface Watch {
+  id: number; 
   name: string;
   dial_size: string;
   material: string;
@@ -11,6 +12,7 @@ export interface Watch {
 
 export const watches: Watch[] = [
   {
+    id: 1,
     name: "Eclipse Elite",
     dial_size: "40mm",
     material: "Stainless Steel",
@@ -21,6 +23,7 @@ export const watches: Watch[] = [
     image_url: "https://example.com/images/eclipse_elite.jpg",
   },
   {
+    id: 2,
     name: "Aurum Classic",
     dial_size: "38mm",
     material: "Gold-Plated",
@@ -31,6 +34,7 @@ export const watches: Watch[] = [
     image_url: "https://example.com/images/aurum_classic.jpg",
   },
   {
+    id: 3,
     name: "Velvet Luxe",
     dial_size: "36mm",
     material: "Rose Gold",
@@ -41,6 +45,7 @@ export const watches: Watch[] = [
     image_url: "https://example.com/images/velvet_luxe.jpg",
   },
   {
+    id: 4,
     name: "Chrono Master",
     dial_size: "42mm",
     material: "Titanium",
@@ -51,6 +56,7 @@ export const watches: Watch[] = [
     image_url: "https://example.com/images/chrono_master.jpg",
   },
   {
+    id: 5,
     name: "Pearl Essence",
     dial_size: "34mm",
     material: "Mother of Pearl",
@@ -61,6 +67,7 @@ export const watches: Watch[] = [
     image_url: "https://example.com/images/pearl_essence.jpg",
   },
   {
+    id: 6,
     name: "Onyx Edge",
     dial_size: "44mm",
     material: "Black Ceramic",
@@ -71,6 +78,7 @@ export const watches: Watch[] = [
     image_url: "https://example.com/images/onyx_edge.jpg",
   },
   {
+    id: 7,
     name: "Crown Jewel",
     dial_size: "37mm",
     material: "Gold-Plated",
@@ -81,6 +89,7 @@ export const watches: Watch[] = [
     image_url: "https://example.com/images/crown_jewel.jpg",
   },
   {
+    id: 8,
     name: "Azure Tide",
     dial_size: "39mm",
     material: "Stainless Steel",
@@ -91,6 +100,7 @@ export const watches: Watch[] = [
     image_url: "https://example.com/images/azure_tide.jpg",
   },
   {
+    id: 9,
     name: "Shadow Legacy",
     dial_size: "41mm",
     material: "Matte Black Steel",
@@ -101,6 +111,7 @@ export const watches: Watch[] = [
     image_url: "https://example.com/images/shadow_legacy.jpg",
   },
   {
+    id: 10,
     name: "Blush Aura",
     dial_size: "33mm",
     material: "Rose Gold",
@@ -111,6 +122,7 @@ export const watches: Watch[] = [
     image_url: "https://example.com/images/blush_aura.jpg",
   },
   {
+    id: 11,
     name: "Meteor Strike",
     dial_size: "43mm",
     material: "Carbon Fiber",
@@ -121,6 +133,7 @@ export const watches: Watch[] = [
     image_url: "https://example.com/images/meteor_strike.jpg",
   },
   {
+    id: 12,
     name: "Ivory Halo",
     dial_size: "35mm",
     material: "Stainless Steel",
@@ -131,6 +144,7 @@ export const watches: Watch[] = [
     image_url: "https://example.com/images/ivory_halo.jpg",
   },
   {
+    id: 13,
     name: "Glacier Flow",
     dial_size: "40mm",
     material: "Silver-Plated",
@@ -141,6 +155,7 @@ export const watches: Watch[] = [
     image_url: "https://example.com/images/glacier_flow.jpg",
   },
   {
+    id: 14,
     name: "Sapphire Pulse",
     dial_size: "38mm",
     material: "Blue Sapphire Crystal",
@@ -151,6 +166,7 @@ export const watches: Watch[] = [
     image_url: "https://example.com/images/sapphire_pulse.jpg",
   },
   {
+    id: 15,
     name: "Obsidian Prime",
     dial_size: "44mm",
     material: "Black Ceramic",
@@ -161,6 +177,7 @@ export const watches: Watch[] = [
     image_url: "https://example.com/images/obsidian_prime.jpg",
   },
   {
+    id: 16,
     name: "Golden Horizon",
     dial_size: "36mm",
     material: "Gold-Plated",
@@ -171,6 +188,7 @@ export const watches: Watch[] = [
     image_url: "https://example.com/images/golden_horizon.jpg",
   },
   {
+    id: 17,
     name: "Aurora Crest",
     dial_size: "42mm",
     material: "Titanium",
@@ -181,6 +199,7 @@ export const watches: Watch[] = [
     image_url: "https://example.com/images/aurora_crest.jpg",
   },
   {
+    id: 18,
     name: "Rose Twilight",
     dial_size: "34mm",
     material: "Rose Gold",
@@ -191,6 +210,7 @@ export const watches: Watch[] = [
     image_url: "https://example.com/images/rose_twilight.jpg",
   },
   {
+    id: 19,
     name: "Steel Eclipse",
     dial_size: "39mm",
     material: "Stainless Steel",
@@ -201,6 +221,7 @@ export const watches: Watch[] = [
     image_url: "https://example.com/images/steel_eclipse.jpg",
   },
   {
+    id: 20,
     name: "Lunar Solace",
     dial_size: "37mm",
     material: "Silver-Plated",
