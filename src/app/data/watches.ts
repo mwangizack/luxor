@@ -1,5 +1,5 @@
 export interface Watch {
-  id: number; 
+  id: number;
   name: string;
   dial_size_mm: number;
   material: string;
@@ -28,7 +28,7 @@ export const watches: Watch[] = [
     dial_size_mm: 38,
     material: "Gold-Plated",
     gender: "Men",
-    bracelet: "Stainless Steel",
+    bracelet: "Gold-Plated",
     price: 45000,
     stock_count: 5,
     image_url: "https://example.com/images/aurum_classic.jpg",
@@ -59,7 +59,7 @@ export const watches: Watch[] = [
     id: 5,
     name: "Pearl Essence",
     dial_size_mm: 34,
-    material: "Mother of Pearl",
+    material: "Gold-Plated",
     gender: "Women",
     bracelet: "Leather",
     price: 40000,
@@ -70,7 +70,7 @@ export const watches: Watch[] = [
     id: 6,
     name: "Onyx Edge",
     dial_size_mm: 44,
-    material: "Black Ceramic",
+    material: "Stainless Steel",
     gender: "Unisex",
     bracelet: "Rubber",
     price: 50000,
@@ -103,7 +103,7 @@ export const watches: Watch[] = [
     id: 9,
     name: "Shadow Legacy",
     dial_size_mm: 41,
-    material: "Matte Black Steel",
+    material: "Titanium",
     gender: "Men",
     bracelet: "Leather",
     price: 55000,
@@ -116,7 +116,7 @@ export const watches: Watch[] = [
     dial_size_mm: 33,
     material: "Rose Gold",
     gender: "Women",
-    bracelet: "Stainless Steel",
+    bracelet: "Rose Gold",
     price: 42000,
     stock_count: 10,
     image_url: "https://example.com/images/blush_aura.jpg",
@@ -125,7 +125,7 @@ export const watches: Watch[] = [
     id: 11,
     name: "Meteor Strike",
     dial_size_mm: 43,
-    material: "Carbon Fiber",
+    material: "Stainless Steel",
     gender: "Men",
     bracelet: "Silicone",
     price: 65000,
@@ -158,9 +158,9 @@ export const watches: Watch[] = [
     id: 14,
     name: "Sapphire Pulse",
     dial_size_mm: 38,
-    material: "Blue Sapphire Crystal",
+    material: "Yellow Gold",
     gender: "Women",
-    bracelet: "Stainless Steel",
+    bracelet: "Yellow Gold",
     price: 50000,
     stock_count: 5,
     image_url: "https://example.com/images/sapphire_pulse.jpg",

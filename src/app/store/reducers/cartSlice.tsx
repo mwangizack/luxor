@@ -81,6 +81,50 @@ const cartSlice = createSlice({
           break;
       }
     },
+    filterWatchesByMaterial: (state, action) => {
+      switch (action.payload) {
+        case "Rose Gold":
+          state.watchesToShow = state.watchesToShow.filter(
+            (watch) => watch.material === "Rose Gold"
+          );
+          break;
+        case "Yellow Gold":
+          state.watchesToShow = state.watchesToShow.filter(
+            (watch) => watch.material === "Yellow Gold"
+          );
+          break;
+        case "Titanium":
+          state.watchesToShow = state.watchesToShow.filter(
+            (watch) => watch.material === "Titanium"
+          );
+          break;
+        case "Stainless Steel":
+          state.watchesToShow = state.watchesToShow.filter(
+            (watch) => watch.material === "Stainless Steel"
+          );
+          break;
+        case "Gold-plated":
+          state.watchesToShow = state.watchesToShow.filter(
+            (watch) => watch.material === "Gold-plated"
+          );
+          break;
+        case "Silver-plated":
+          state.watchesToShow = state.watchesToShow.filter(
+            (watch) => watch.material === "Silver-plated"
+          );
+          break;
+        case "Black ceramic":
+          state.watchesToShow = state.watchesToShow.filter(
+            (watch) => watch.material === "Black ceramic"
+          );
+          break;
+        default:
+          state.watchesToShow = state.watchesToShow.filter(
+            (watch) => watch.material !== ""
+          );
+          break;
+      }
+    },
   },
 });
 
@@ -89,3 +133,4 @@ export const { searchWatches } = cartSlice.actions;
 export const { sortWatches } = cartSlice.actions;
 export const { filterWatchesByGender } = cartSlice.actions;
 export const { filterWatchesByDialSize } = cartSlice.actions;
+export const { filterWatchesByMaterial } = cartSlice.actions;
