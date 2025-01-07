@@ -3,6 +3,7 @@ import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import SearchInput from "./SearchInput";
 import FilterListIcon from "@mui/icons-material/FilterList";
+import SortByInput from "./SortByInput";
 
 function LandingContent() {
   const [showFilters, setShowFilters] = React.useState(false);
@@ -24,27 +25,30 @@ function LandingContent() {
 
       {/* Inputs */}
       <Box
-        sx={{
-          marginTop: "20px",
-          display: "flex",
-          gap: "3rem",
-          alignItems: "center",
-        }}
+        sx={{ width: "100%", display: "flex", justifyContent: "space-between", marginTop: "20px" }}
       >
-        <SearchInput />
-        <Button
-          variant="outlined"
-          startIcon={<FilterListIcon />}
+        <Box
           sx={{
-            textTransform: "none",
-            padding: "0.75rem 1rem",
-            width: "10rem",
-            height: "3rem",
+            display: "flex",
+            gap: "3rem",
           }}
-          onClick={() => setShowFilters(!showFilters)}
         >
-          Filter
-        </Button>
+          <SearchInput />
+          <Button
+            variant="outlined"
+            startIcon={<FilterListIcon />}
+            sx={{
+              textTransform: "none",
+              padding: "0.75rem 1rem",
+              width: "10rem",
+              height: "3rem",
+            }}
+            onClick={() => setShowFilters(!showFilters)}
+          >
+            Filter
+          </Button>
+        </Box>
+        <SortByInput />
       </Box>
     </section>
   );
