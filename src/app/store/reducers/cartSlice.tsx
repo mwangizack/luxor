@@ -4,11 +4,11 @@ import { watches } from "@/app/data/watches";
 import { Watch } from "@/app/data/watches";
 
 interface CartState {
-  filteredWatches: Watch[];
+  watchesToShow: Watch[];
 }
 
 const initialState: CartState = {
-  filteredWatches: watches,
+  watchesToShow: watches,
 };
 
 const cartSlice = createSlice({
@@ -16,7 +16,7 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     filterWatches: (state, action) => {
-      state.filteredWatches = watches.filter((watch) =>
+      state.watchesToShow = watches.filter((watch) =>
         watch.name.toLowerCase().includes(action.payload.toLowerCase())
       );
     },
