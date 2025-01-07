@@ -4,6 +4,7 @@ import { Box, Button, Typography } from "@mui/material";
 import SearchInput from "./SearchInput";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import SortByInput from "./SortByInput";
+import FiltersSelectBoxes from "./FiltersSelectBoxes";
 
 function LandingContent() {
   const [showFilters, setShowFilters] = React.useState(false);
@@ -50,6 +51,11 @@ function LandingContent() {
         </Box>
         <SortByInput />
       </Box>
+
+      {/* Filters */}
+      {showFilters && (
+        <FiltersSelectBoxes />
+      )}
     </section>
   );
 }

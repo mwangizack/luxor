@@ -1,7 +1,7 @@
 export interface Watch {
   id: number; 
   name: string;
-  dial_size: string;
+  dial_size_mm: number;
   material: string;
   gender: string;
   bracelet: string;
@@ -14,7 +14,7 @@ export const watches: Watch[] = [
   {
     id: 1,
     name: "Eclipse Elite",
-    dial_size: "40mm",
+    dial_size_mm: 40,
     material: "Stainless Steel",
     gender: "Unisex",
     bracelet: "Leather",
@@ -25,7 +25,7 @@ export const watches: Watch[] = [
   {
     id: 2,
     name: "Aurum Classic",
-    dial_size: "38mm",
+    dial_size_mm: 38,
     material: "Gold-Plated",
     gender: "Men",
     bracelet: "Stainless Steel",
@@ -36,7 +36,7 @@ export const watches: Watch[] = [
   {
     id: 3,
     name: "Velvet Luxe",
-    dial_size: "36mm",
+    dial_size_mm: 36,
     material: "Rose Gold",
     gender: "Women",
     bracelet: "Mesh",
@@ -47,7 +47,7 @@ export const watches: Watch[] = [
   {
     id: 4,
     name: "Chrono Master",
-    dial_size: "42mm",
+    dial_size_mm: 42,
     material: "Titanium",
     gender: "Men",
     bracelet: "Silicone",
@@ -58,7 +58,7 @@ export const watches: Watch[] = [
   {
     id: 5,
     name: "Pearl Essence",
-    dial_size: "34mm",
+    dial_size_mm: 34,
     material: "Mother of Pearl",
     gender: "Women",
     bracelet: "Leather",
@@ -69,7 +69,7 @@ export const watches: Watch[] = [
   {
     id: 6,
     name: "Onyx Edge",
-    dial_size: "44mm",
+    dial_size_mm: 44,
     material: "Black Ceramic",
     gender: "Unisex",
     bracelet: "Rubber",
@@ -80,7 +80,7 @@ export const watches: Watch[] = [
   {
     id: 7,
     name: "Crown Jewel",
-    dial_size: "37mm",
+    dial_size_mm: 37,
     material: "Gold-Plated",
     gender: "Women",
     bracelet: "Mesh",
@@ -91,7 +91,7 @@ export const watches: Watch[] = [
   {
     id: 8,
     name: "Azure Tide",
-    dial_size: "39mm",
+    dial_size_mm: 39,
     material: "Stainless Steel",
     gender: "Unisex",
     bracelet: "Stainless Steel",
@@ -102,7 +102,7 @@ export const watches: Watch[] = [
   {
     id: 9,
     name: "Shadow Legacy",
-    dial_size: "41mm",
+    dial_size_mm: 41,
     material: "Matte Black Steel",
     gender: "Men",
     bracelet: "Leather",
@@ -113,7 +113,7 @@ export const watches: Watch[] = [
   {
     id: 10,
     name: "Blush Aura",
-    dial_size: "33mm",
+    dial_size_mm: 33,
     material: "Rose Gold",
     gender: "Women",
     bracelet: "Stainless Steel",
@@ -124,7 +124,7 @@ export const watches: Watch[] = [
   {
     id: 11,
     name: "Meteor Strike",
-    dial_size: "43mm",
+    dial_size_mm: 43,
     material: "Carbon Fiber",
     gender: "Men",
     bracelet: "Silicone",
@@ -135,7 +135,7 @@ export const watches: Watch[] = [
   {
     id: 12,
     name: "Ivory Halo",
-    dial_size: "35mm",
+    dial_size_mm: 35,
     material: "Stainless Steel",
     gender: "Women",
     bracelet: "Leather",
@@ -146,7 +146,7 @@ export const watches: Watch[] = [
   {
     id: 13,
     name: "Glacier Flow",
-    dial_size: "40mm",
+    dial_size_mm: 40,
     material: "Silver-Plated",
     gender: "Unisex",
     bracelet: "Mesh",
@@ -157,7 +157,7 @@ export const watches: Watch[] = [
   {
     id: 14,
     name: "Sapphire Pulse",
-    dial_size: "38mm",
+    dial_size_mm: 38,
     material: "Blue Sapphire Crystal",
     gender: "Women",
     bracelet: "Stainless Steel",
@@ -168,7 +168,7 @@ export const watches: Watch[] = [
   {
     id: 15,
     name: "Obsidian Prime",
-    dial_size: "44mm",
+    dial_size_mm: 44,
     material: "Black Ceramic",
     gender: "Men",
     bracelet: "Rubber",
@@ -179,7 +179,7 @@ export const watches: Watch[] = [
   {
     id: 16,
     name: "Golden Horizon",
-    dial_size: "36mm",
+    dial_size_mm: 36,
     material: "Gold-Plated",
     gender: "Women",
     bracelet: "Leather",
@@ -190,7 +190,7 @@ export const watches: Watch[] = [
   {
     id: 17,
     name: "Aurora Crest",
-    dial_size: "42mm",
+    dial_size_mm: 42,
     material: "Titanium",
     gender: "Unisex",
     bracelet: "Stainless Steel",
@@ -201,7 +201,7 @@ export const watches: Watch[] = [
   {
     id: 18,
     name: "Rose Twilight",
-    dial_size: "34mm",
+    dial_size_mm: 34,
     material: "Rose Gold",
     gender: "Women",
     bracelet: "Mesh",
@@ -212,7 +212,7 @@ export const watches: Watch[] = [
   {
     id: 19,
     name: "Steel Eclipse",
-    dial_size: "39mm",
+    dial_size_mm: 39,
     material: "Stainless Steel",
     gender: "Men",
     bracelet: "Stainless Steel",
@@ -223,7 +223,7 @@ export const watches: Watch[] = [
   {
     id: 20,
     name: "Lunar Solace",
-    dial_size: "37mm",
+    dial_size_mm: 37,
     material: "Silver-Plated",
     gender: "Women",
     bracelet: "Leather",

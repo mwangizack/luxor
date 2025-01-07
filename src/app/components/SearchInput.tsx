@@ -2,14 +2,14 @@ import React from "react";
 import { Autocomplete, TextField } from "@mui/material";
 import { watches } from "../data/watches";
 import { useDispatch } from "react-redux";
-import { filterWatches } from "../store/reducers/cartSlice";
+import { searchWatches } from "../store/reducers/cartSlice";
 
 function SearchInput() {
   const [searchValue, setSearchValue] = React.useState("");
   const dispatch = useDispatch();
 
   function handleSearch(value: string | null) {
-    dispatch(filterWatches(value));
+    dispatch(searchWatches(value));
   }
 
   return (
