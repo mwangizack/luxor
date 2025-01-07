@@ -20,8 +20,22 @@ const cartSlice = createSlice({
         watch.name.toLowerCase().includes(action.payload.toLowerCase())
       );
     },
+    sortWatches: (state, action) => {
+      switch (action.payload) {
+        case "price descending":
+          state.watchesToShow.sort((a, b) => b.price - a.price);
+          break;
+        case "price ascending":
+          state.watchesToShow.sort((a, b) => a.price - b.price);
+          break;
+        default:
+          state.watchesToShow.sort((a, b) => a.id - b.id);
+          break;
+      }
+    },
   },
 });
 
 export default cartSlice.reducer;
 export const { filterWatches } = cartSlice.actions;
+export const { sortWatches } = cartSlice.actions;
