@@ -10,12 +10,10 @@ import { useDispatch } from "react-redux";
 import { sortWatches } from "../store/reducers/cartSlice";
 
 function SortByInput() {
-  const [sortBy, setSortBy] = React.useState("");
   const dispatch = useDispatch();
 
   function handleChangeSortBy(event: React.ChangeEvent<HTMLSelectElement>) {
-    setSortBy(event.target.value);
-    dispatch(sortWatches(sortBy));
+    dispatch(sortWatches(event.target.value));
   }
 
   return (
@@ -28,7 +26,7 @@ function SortByInput() {
       <FormControl sx={{ width: "12rem" }}>
         <Select
           id="sort-by"
-          value={sortBy}
+          defaultValue=""
           onChange={handleChangeSortBy}
           displayEmpty
           sx={{

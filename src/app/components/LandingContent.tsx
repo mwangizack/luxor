@@ -7,6 +7,7 @@ import SortByInput from "./SortByInput";
 import FiltersSelectBoxes from "./FiltersSelectBoxes";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
+import WatchCard from "./WatchCard";
 
 function LandingContent() {
   const [showFilters, setShowFilters] = React.useState(false);
@@ -69,6 +70,29 @@ function LandingContent() {
           Showing {watches.length} {watches.length === 1 ? "watch" : "watches"}
         </Typography>
       )}
+
+      {/* Watch cards */}
+      <Box
+        sx={{
+          marginTop: "20px",
+          display: "flex",
+          gap: "2.75rem",
+          flexWrap: "wrap",
+        }}
+      >
+        {watches.map((watch) => (
+          <WatchCard
+            key={watch.id}
+            name={watch.name}
+            dialSize={watch.dial_size_mm}
+            material={watch.material}
+            gender={watch.gender}
+            price={watch.price}
+            stock_count={watch.stock_count}
+            image_url={watch.image_url}
+          />
+        ))}
+      </Box>
     </section>
   );
 }

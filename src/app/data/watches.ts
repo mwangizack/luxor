@@ -206,7 +206,7 @@ export const watches: Watch[] = [
     gender: "female",
     bracelet: "mesh",
     price: 40000,
-    stock_count: 10,
+    stock_count: 0,
     image_url: "https://example.com/images/rose_twilight.jpg",
   },
   {
