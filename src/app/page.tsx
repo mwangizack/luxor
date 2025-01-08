@@ -2,6 +2,7 @@ import { Typography } from "@mui/material";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import LandingContent from "./components/LandingContent";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
         <Hero />
         <LandingContent />
       </main>
-      <footer>{/* Add a component */}</footer>
+      <footer><Footer /></footer>
     </>
   );
 }
