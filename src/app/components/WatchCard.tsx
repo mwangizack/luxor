@@ -46,7 +46,13 @@ function WatchCard({
 
       {/* Watch details */}
       <Stack sx={{ alignItems: "center", padding: "1rem 3rem" }}>
-        <Typography sx={{ fontWeight: "400", fontSize: "1.2rem" }}>
+        <Typography
+          sx={{
+            fontWeight: "400",
+            fontSize: "1.2rem",
+            color: "secondary.main",
+          }}
+        >
           {name}
         </Typography>
         <Typography sx={{ color: "#777777" }}>

@@ -35,6 +35,8 @@ function LandingContent() {
           display: "flex",
           justifyContent: "space-between",
           marginTop: "20px",
+          flexWrap: "wrap",
+          gap: "1rem",
         }}
       >
         <Box

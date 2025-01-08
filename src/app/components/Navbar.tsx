@@ -19,7 +19,10 @@ function Navbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
         position="static"
-        sx={{ backgroundColor: "secondary.main", padding: "5px 100px" }}
+        sx={{
+          backgroundColor: "secondary.main",
+          padding: { xs: "5px 30px", sm: "5px 65px", md: "5px 100px" },
+        }}
       >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           {/* Luxor Logo */}
@@ -29,7 +32,7 @@ function Navbar() {
             sx={{
               fontFamily: cinzelFont.className,
               fontWeight: "600",
-              fontSize: "2rem",
+              fontSize: { xs: "1.7rem", sm: "1.9rem", md: "2rem" },
               color: "primary",
               textTransform: "none",
               "&:hover": {
@@ -42,7 +45,18 @@ function Navbar() {
           </Link>
 
           {/* Cart Icon */}
-          <IconButton size="large" aria-label="notifications" color="inherit">
+          <IconButton
+            size="large"
+            sx={{
+              fontSize: {
+                xs: "medium",
+                sm: "medium",
+                md: "large",
+              },
+            }}
+            aria-label="notifications"
+            color="inherit"
+          >
             <Badge
               badgeContent={1} //Make it dynamic
               color="error"
@@ -51,7 +65,9 @@ function Navbar() {
                 horizontal: "right",
               }}
             >
-              <LocalMallOutlinedIcon fontSize="medium" />
+              <LocalMallOutlinedIcon
+                fontSize="medium"
+              />
             </Badge>
           </IconButton>
         </Toolbar>
