@@ -1,6 +1,7 @@
-import { Box, FormControl, MenuItem, Select } from "@mui/material";
+import { Box, Button, FormControl, MenuItem, Select } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { setFilter, clearFilters } from "../store/reducers/cartSlice";
+import FilterAltOffIcon from '@mui/icons-material/FilterAltOff';
 import React from "react";
 import { RootState } from "../store/store";
 
@@ -119,6 +120,22 @@ function FiltersSelectBoxes() {
           <MenuItem value="rubber">Rubber</MenuItem>
         </Select>
       </FormControl>
+
+      {/* Clear filters button */}
+      <Button
+        variant="contained"
+        disableElevation
+        startIcon={<FilterAltOffIcon />}
+        sx={{
+          textTransform: "none",
+          padding: "0.75rem 1rem",
+          width: "10rem",
+          height: "3rem",
+        }}
+        onClick={() => dispatch(clearFilters())}
+      >
+        Clear all
+      </Button>
     </Box>
   );
 }
