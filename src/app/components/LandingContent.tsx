@@ -5,9 +5,12 @@ import SearchInput from "./SearchInput";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import SortByInput from "./SortByInput";
 import FiltersSelectBoxes from "./FiltersSelectBoxes";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/store";
 
 function LandingContent() {
   const [showFilters, setShowFilters] = React.useState(false);
+  const watches = useSelector((state: RootState) => state.cart.watchesToShow);
 
   return (
     <section id="content-section" style={{ padding: "20px 100px" }}>
@@ -26,7 +29,12 @@ function LandingContent() {
 
       {/* Inputs */}
       <Box
-        sx={{ width: "100%", display: "flex", justifyContent: "space-between", marginTop: "20px" }}
+        sx={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "space-between",
+          marginTop: "20px",
+        }}
       >
         <Box
           sx={{
@@ -53,9 +61,10 @@ function LandingContent() {
       </Box>
 
       {/* Filters */}
-      {showFilters && (
-        <FiltersSelectBoxes />
-      )}
+      {showFilters && <FiltersSelectBoxes />}
+
+      {/* Count */}
+      <Typography sx={{ marginTop: "20px", }}>Showing {watches.length} {watches.length === 1 ? "watch" : "watches"}</Typography>
     </section>
   );
 }
