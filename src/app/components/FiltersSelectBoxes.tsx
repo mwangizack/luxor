@@ -1,36 +1,36 @@
 import { Box, FormControl, MenuItem, Select } from "@mui/material";
-import { useDispatch } from "react-redux";
-import { filterWatchesByGender } from "../store/reducers/cartSlice";
-import { filterWatchesByDialSize } from "../store/reducers/cartSlice";
-import { filterWatchesByMaterial } from "../store/reducers/cartSlice";
-import { filterWatchesByBracelet } from "../store/reducers/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { setFilter, clearFilters } from "../store/reducers/cartSlice";
 import React from "react";
+import { RootState } from "../store/store";
 
 function FiltersSelectBoxes() {
-  const [gender, setGender] = React.useState("");
-  const [dialSize, setDialSize] = React.useState("");
-  const [material, setMaterial] = React.useState("");
-  const [bracelet, setBracelet] = React.useState("");
   const dispatch = useDispatch();
+  const gender = useSelector((state: RootState) => state.cart.filters.gender);
+  const dialSize = useSelector(
+    (state: RootState) => state.cart.filters.dialSize
+  );
+  const material = useSelector(
+    (state: RootState) => state.cart.filters.material
+  );
+  const bracelet = useSelector(
+    (state: RootState) => state.cart.filters.bracelet
+  );
 
   function handleChangeGender(event: React.ChangeEvent<HTMLSelectElement>) {
-    setGender(event.target.value);
-    dispatch(filterWatchesByGender(gender));
+    dispatch(setFilter({ filterName: "gender", value: event.target.value }));
   }
 
   function handleChangeDialSize(event: React.ChangeEvent<HTMLSelectElement>) {
-    setDialSize(event.target.value);
-    dispatch(filterWatchesByDialSize(dialSize));
+    dispatch(setFilter({ filterName: "dialSize", value: event.target.value }));
   }
 
   function handleChangeMaterial(event: React.ChangeEvent<HTMLSelectElement>) {
-    setMaterial(event.target.value);
-    dispatch(filterWatchesByMaterial(material));
+    dispatch(setFilter({ filterName: "material", value: event.target.value }));
   }
 
   function handleChangeBracelet(event: React.ChangeEvent<HTMLSelectElement>) {
-    setBracelet(event.target.value);
-    dispatch(filterWatchesByBracelet(bracelet));
+    dispatch(setFilter({ filterName: "bracelet", value: event.target.value }));
   }
 
   return (
@@ -113,7 +113,6 @@ function FiltersSelectBoxes() {
           <MenuItem value="yellow gold">Yellow Gold</MenuItem>
           <MenuItem value="leather">Leather</MenuItem>
           <MenuItem value="mesh">Mesh</MenuItem>
-          <MenuItem value="titanium">Titanium</MenuItem>
           <MenuItem value="stainless steel">Stainless Steel</MenuItem>
           <MenuItem value="gold-plated">Gold-plated</MenuItem>
           <MenuItem value="silicone">Silicone</MenuItem>

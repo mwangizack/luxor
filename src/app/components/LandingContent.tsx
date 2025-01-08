@@ -63,8 +63,12 @@ function LandingContent() {
       {/* Filters */}
       {showFilters && <FiltersSelectBoxes />}
 
-      {/* Count */}
-      <Typography sx={{ marginTop: "20px", }}>Showing {watches.length} {watches.length === 1 ? "watch" : "watches"}</Typography>
+      {/* Show count statement only if the filtered results are greater than zero */}
+      {watches.length > 0 && (
+        <Typography sx={{ marginTop: "20px" }}>
+          Showing {watches.length} {watches.length === 1 ? "watch" : "watches"}
+        </Typography>
+      )}
     </section>
   );
 }

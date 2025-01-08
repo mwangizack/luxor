@@ -5,10 +5,22 @@ import { Watch } from "@/app/data/watches";
 
 interface CartState {
   watchesToShow: Watch[];
+  filters: {
+    gender: string;
+    dialSize: string;
+    material: string;
+    bracelet: string;
+  };
 }
 
 const initialState: CartState = {
   watchesToShow: watches,
+  filters: {
+    gender: "",
+    dialSize: "",
+    material: "",
+    bracelet: "",
+  },
 };
 
 const cartSlice = createSlice({
@@ -16,9 +28,13 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     searchWatches: (state, action) => {
-      state.watchesToShow = watches.filter((watch) =>
-        watch.name.toLowerCase().includes(action.payload.toLowerCase())
-      );
+      if (!action.payload) {
+        state.watchesToShow = watches;
+      } else {
+        state.watchesToShow = watches.filter((watch) =>
+          watch.name.toLowerCase().includes(action.payload.toLowerCase())
+        );
+      }
     },
     sortWatches: (state, action) => {
       switch (action.payload) {
@@ -33,154 +49,40 @@ const cartSlice = createSlice({
           break;
       }
     },
-    filterWatchesByGender: (state, action) => {
-      switch (action.payload) {
-        case "male":
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.gender === "Men"
-          );
-          break;
-        case "female":
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.gender === "Women"
-          );
-          break;
-        case "unisex":
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.gender === "Unisex"
-          );
-          break;
-        default:
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.gender !== ""
-          );
-          break;
-      }
+    setFilter: (state, action) => {
+      const { filterName, value } = action.payload;
+      state.filters[filterName] = value;
+      state.watchesToShow = applyFilters(watches, state.filters);
     },
-    filterWatchesByDialSize: (state, action) => {
-      switch (action.payload) {
-        case "less than 36mm":
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.dial_size_mm < 36
-          );
-          break;
-        case "36mm to 42mm":
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.dial_size_mm >= 36 && watch.dial_size_mm <= 42
-          );
-          break;
-        case "greater than 42mm":
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.dial_size_mm > 42
-          );
-          break;
-        default:
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.dial_size_mm > 0
-          );
-          break;
-      }
-    },
-    filterWatchesByMaterial: (state, action) => {
-      switch (action.payload) {
-        case "rose gold":
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.material === "Rose Gold"
-          );
-          break;
-        case "yellow gold":
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.material === "Yellow Gold"
-          );
-          break;
-        case "titanium":
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.material === "Titanium"
-          );
-          break;
-        case "stainless steel":
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.material === "Stainless Steel"
-          );
-          break;
-        case "gold-plated":
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.material === "Gold-plated"
-          );
-          break;
-        case "silver-plated":
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.material === "Silver-plated"
-          );
-          break;
-        case "black ceramic":
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.material === "Black ceramic"
-          );
-          break;
-        default:
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.material !== ""
-          );
-          break;
-      }
-    },
-    filterWatchesByBracelet: (state, action) => {
-      switch (action.payload) {
-        case "rubber":
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.bracelet === "Rubber"
-          );
-          break;
-        case "leather":
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.bracelet === "Leather"
-          );
-          break;
-        case "rose gold":
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.bracelet === "Rose Gold"
-          );
-          break;
-        case "yellow gold":
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.bracelet === "Yellow Gold"
-          );
-          break;
-        case "titanium":
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.bracelet === "Titanium"
-          );
-          break;
-        case "stainless steel":
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.bracelet === "Stainless Steel"
-          );
-          break;
-        case "gold-plated":
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.bracelet === "Gold-plated"
-          );
-          break;
-        case "silicone":
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.bracelet === "Silicone"
-          );
-          break;
-        default:
-          state.watchesToShow = state.watchesToShow.filter(
-            (watch) => watch.bracelet !== ""
-          );
-          break;
-      }
+    clearFilters: (state) => {
+      state.filters = {
+        gender: "",
+        dialSize: "",
+        material: "",
+        bracelet: "",
+      };
+      state.watchesToShow = watches;
     },
   },
 });
 
+function applyFilters(data: Watch[], filters: CartState["filters"]): Watch[] {
+  return data.filter((watch) => {
+    return (
+      (!filters.gender || watch.gender === filters.gender) &&
+      (!filters.dialSize ||
+        (filters.dialSize === "less than 36mm" && watch.dial_size_mm < 36) ||
+        (filters.dialSize === "36mm to 42mm" &&
+          watch.dial_size_mm >= 36 &&
+          watch.dial_size_mm <= 42) ||
+        (filters.dialSize === "greater than 42mm" &&
+          watch.dial_size_mm > 42)) &&
+      (!filters.material || watch.material === filters.material) &&
+      (!filters.bracelet || watch.bracelet === filters.bracelet)
+    );
+  });
+}
+
 export default cartSlice.reducer;
-export const { searchWatches } = cartSlice.actions;
-export const { sortWatches } = cartSlice.actions;
-export const { filterWatchesByGender } = cartSlice.actions;
-export const { filterWatchesByDialSize } = cartSlice.actions;
-export const { filterWatchesByMaterial } = cartSlice.actions;
-export const { filterWatchesByBracelet } = cartSlice.actions;
+export const { searchWatches, sortWatches, setFilter, clearFilters } =
+  cartSlice.actions;
