@@ -3,12 +3,14 @@ import { useDispatch } from "react-redux";
 import { filterWatchesByGender } from "../store/reducers/cartSlice";
 import { filterWatchesByDialSize } from "../store/reducers/cartSlice";
 import { filterWatchesByMaterial } from "../store/reducers/cartSlice";
+import { filterWatchesByBracelet } from "../store/reducers/cartSlice";
 import React from "react";
 
 function FiltersSelectBoxes() {
   const [gender, setGender] = React.useState("");
   const [dialSize, setDialSize] = React.useState("");
   const [material, setMaterial] = React.useState("");
+  const [bracelet, setBracelet] = React.useState("");
   const dispatch = useDispatch();
 
   function handleChangeGender(event: React.ChangeEvent<HTMLSelectElement>) {
@@ -24,6 +26,11 @@ function FiltersSelectBoxes() {
   function handleChangeMaterial(event: React.ChangeEvent<HTMLSelectElement>) {
     setMaterial(event.target.value);
     dispatch(filterWatchesByMaterial(material));
+  }
+
+  function handleChangeBracelet(event: React.ChangeEvent<HTMLSelectElement>) {
+    setBracelet(event.target.value);
+    dispatch(filterWatchesByBracelet(bracelet));
   }
 
   return (
@@ -90,6 +97,29 @@ function FiltersSelectBoxes() {
       </FormControl>
 
       {/* Bracelets */}
+      <FormControl sx={{ width: "12rem" }}>
+        <Select
+          value={bracelet}
+          onChange={handleChangeBracelet}
+          displayEmpty
+          sx={{
+            height: "3rem",
+          }}
+        >
+          <MenuItem value="">
+            <em>All bracelets</em>
+          </MenuItem>
+          <MenuItem value="rose gold">Rose Gold</MenuItem>
+          <MenuItem value="yellow gold">Yellow Gold</MenuItem>
+          <MenuItem value="leather">Leather</MenuItem>
+          <MenuItem value="mesh">Mesh</MenuItem>
+          <MenuItem value="titanium">Titanium</MenuItem>
+          <MenuItem value="stainless steel">Stainless Steel</MenuItem>
+          <MenuItem value="gold-plated">Gold-plated</MenuItem>
+          <MenuItem value="silicone">Silicone</MenuItem>
+          <MenuItem value="rubber">Rubber</MenuItem>
+        </Select>
+      </FormControl>
     </Box>
   );
 }
