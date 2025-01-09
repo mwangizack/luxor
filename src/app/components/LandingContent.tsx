@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Typography, useMediaQuery } from "@mui/material";
 import SearchInput from "./SearchInput";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import SortByInput from "./SortByInput";
@@ -12,14 +12,18 @@ import WatchCard from "./WatchCard";
 function LandingContent() {
   const [showFilters, setShowFilters] = React.useState(false);
   const watches = useSelector((state: RootState) => state.cart.watchesToShow);
+  const isXsAndBelow = useMediaQuery((theme) => theme.breakpoints.only("xs"));
 
   return (
-    <section id="content-section" style={{ padding: "20px 100px" }}>
+    <Box
+      id="content-section"
+      sx={{ padding: { xs: "20px 30px", sm: "20px 65px", md: "20px 100px" } }}
+    >
       {/* Title */}
       <Typography
         variant="h2"
         sx={{
-          fontSize: "1.5rem",
+          fontSize: { xs: "1.2rem", sm: "1.4rem", md: "1.5rem" },
           color: "secondary.main",
           fontWeight: "600",
           textAlign: "center",
@@ -42,7 +46,8 @@ function LandingContent() {
         <Box
           sx={{
             display: "flex",
-            gap: "3rem",
+            gap: { xs: "1rem", sm: "3rem", md: "3rem" },
+            flexWrap: "wrap",
           }}
         >
           <SearchInput />
@@ -52,15 +57,20 @@ function LandingContent() {
             sx={{
               textTransform: "none",
               padding: "0.75rem 1rem",
-              width: "10rem",
+              width: { xs: "8rem", sm: "8rem", md: "10rem" },
               height: "3rem",
             }}
             onClick={() => setShowFilters(!showFilters)}
           >
             Filter
           </Button>
+
+          {/* Show the sort input here for extra small devices */}
+          {isXsAndBelow && <SortByInput />}
         </Box>
-        <SortByInput />
+
+        {/* Show the sort input here for larger devices */}
+        {isXsAndBelow ? null : <SortByInput />}
       </Box>
 
       {/* Filters */}
@@ -78,7 +88,7 @@ function LandingContent() {
         sx={{
           marginTop: "20px",
           display: "flex",
-          gap: "2.75rem",
+          gap: { xs: "2.75rem", sm: "3.1rem", md: "2.75rem" },
           flexWrap: "wrap",
         }}
       >
@@ -95,7 +105,7 @@ function LandingContent() {
           />
         ))}
       </Box>
-    </section>
+    </Box>
   );
 }
 

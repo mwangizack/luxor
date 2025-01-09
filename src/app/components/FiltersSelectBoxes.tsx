@@ -1,7 +1,7 @@
 import { Box, Button, FormControl, MenuItem, Select } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { setFilter, clearFilters } from "../store/reducers/cartSlice";
-import FilterAltOffIcon from '@mui/icons-material/FilterAltOff';
+import FilterAltOffIcon from "@mui/icons-material/FilterAltOff";
 import React from "react";
 import { RootState } from "../store/store";
 
@@ -35,9 +35,16 @@ function FiltersSelectBoxes() {
   }
 
   return (
-    <Box sx={{ marginTop: "20px", display: "flex", gap: "1rem" }}>
+    <Box
+      sx={{
+        marginTop: "20px",
+        display: "flex",
+        gap: { xs: "1.2rem", sm: "1rem", md: "1rem" },
+        flexWrap: "wrap",
+      }}
+    >
       {/* Gender */}
-      <FormControl sx={{ width: "12rem" }}>
+      <FormControl sx={{ width: { xs: "10rem", sm: "9rem", md: "12rem" } }}>
         <Select
           value={gender}
           onChange={handleChangeGender}
@@ -56,7 +63,7 @@ function FiltersSelectBoxes() {
       </FormControl>
 
       {/* Dial size */}
-      <FormControl sx={{ width: "12rem" }}>
+      <FormControl sx={{ width: { xs: "10rem", sm: "9rem", md: "12rem" } }}>
         <Select
           value={dialSize}
           onChange={handleChangeDialSize}
@@ -75,7 +82,7 @@ function FiltersSelectBoxes() {
       </FormControl>
 
       {/* Materials */}
-      <FormControl sx={{ width: "12rem" }}>
+      <FormControl sx={{ width: { xs: "10rem", sm: "9rem", md: "12rem" } }}>
         <Select
           value={material}
           onChange={handleChangeMaterial}
@@ -98,7 +105,7 @@ function FiltersSelectBoxes() {
       </FormControl>
 
       {/* Bracelets */}
-      <FormControl sx={{ width: "12rem" }}>
+      <FormControl sx={{ width: { xs: "10rem", sm: "9rem", md: "12rem" } }}>
         <Select
           value={bracelet}
           onChange={handleChangeBracelet}
@@ -129,7 +136,7 @@ function FiltersSelectBoxes() {
         sx={{
           textTransform: "none",
           padding: "0.75rem 1rem",
-          width: "10rem",
+          width: { xs: "8rem", sm: "7rem", md: "10rem" },
           height: "3rem",
         }}
         onClick={() => dispatch(clearFilters())}

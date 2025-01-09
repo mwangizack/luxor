@@ -17,13 +17,13 @@ function SortByInput() {
   }
 
   return (
-    <Box sx={{ display: "flex", gap: "1rem" }}>
+    <Box sx={{ display: "flex", gap: { xs: "0.4rem", sm: "1rem", md: "1rem" } }}>
       <FormHelperText
-        sx={{ alignSelf: "flex-end", fontSize: "1.2rem", color: "black" }}
+        sx={{ alignSelf: "flex-end", fontSize: { xs: "1.1rem", sm: "1.2rem", md: "1.2rem" }, color: "black" }}
       >
         Sort by:
       </FormHelperText>
-      <FormControl sx={{ width: "12rem" }}>
+      <FormControl sx={{ width: { xs: "8.3rem", sm: "10rem", md: "12rem" } }}>
         <Select
           id="sort-by"
           defaultValue=""

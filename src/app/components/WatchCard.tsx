@@ -12,7 +12,10 @@ function WatchCard({
   image_url,
 }) {
   return (
-    <Paper elevation={3} sx={{ minWidth: "24rem", height: "26rem" }}>
+    <Paper
+      elevation={3}
+      sx={{ width: { xs: "22rem", sm: "22rem", md: "24rem" }, height: "26rem" }}
+    >
       {/* Watch image with fallback */}
       <Box
         sx={{
@@ -66,6 +69,7 @@ function WatchCard({
         {/* Add to cart button */}
         <Button
           variant="contained"
+          disableElevation
           disabled={!stock_count}
           sx={{
             textTransform: "none",

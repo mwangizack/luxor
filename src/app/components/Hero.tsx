@@ -45,7 +45,7 @@ function Hero() {
             textAlign: "center",
           }}
         >
-          Discover our collection of meticulously crafted timepieces that
+          Discover our unique collection of meticulously crafted timepieces that
           combine precision, style and heritage, designed to make a statement
           wherever you go.
         </Typography>
