@@ -11,7 +11,9 @@ import WatchCard from "./WatchCard";
 
 function LandingContent() {
   const [showFilters, setShowFilters] = React.useState(false);
-  const watches = useSelector((state: RootState) => state.cart.watchesToShow);
+  const watches = useSelector(
+    (state: RootState) => state.watchList.watchesToShow
+  );
   const isXsAndBelow = useMediaQuery((theme) => theme.breakpoints.only("xs"));
 
   return (

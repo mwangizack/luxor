@@ -1,10 +1,10 @@
 "use client";
 import { configureStore } from "@reduxjs/toolkit";
-import cartSliceReducer from "./reducers/cartSlice";
+import watchListReducer from "./reducers/watchListSlice";
 
 export const store = configureStore({
   reducer: {
-    cart: cartSliceReducer,
+    watchList: watchListReducer,
   },
 });
 

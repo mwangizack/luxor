@@ -1,21 +1,23 @@
 import { Box, Button, FormControl, MenuItem, Select } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { setFilter, clearFilters } from "../store/reducers/cartSlice";
+import { setFilter, clearFilters } from "../store/reducers/watchListSlice";
 import FilterAltOffIcon from "@mui/icons-material/FilterAltOff";
 import React from "react";
 import { RootState } from "../store/store";
 
 function FiltersSelectBoxes() {
   const dispatch = useDispatch();
-  const gender = useSelector((state: RootState) => state.cart.filters.gender);
+  const gender = useSelector(
+    (state: RootState) => state.watchList.filters.gender
+  );
   const dialSize = useSelector(
-    (state: RootState) => state.cart.filters.dialSize
+    (state: RootState) => state.watchList.filters.dialSize
   );
   const material = useSelector(
-    (state: RootState) => state.cart.filters.material
+    (state: RootState) => state.watchList.filters.material
   );
   const bracelet = useSelector(
-    (state: RootState) => state.cart.filters.bracelet
+    (state: RootState) => state.watchList.filters.bracelet
   );
 
   function handleChangeGender(event: React.ChangeEvent<HTMLSelectElement>) {

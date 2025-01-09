@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { watches } from "@/app/data/watches";
 import { Watch } from "@/app/data/watches";
 
-interface CartState {
+interface WatchListState {
   watchesToShow: Watch[];
   filters: {
     gender: string;
@@ -13,7 +13,7 @@ interface CartState {
   };
 }
 
-const initialState: CartState = {
+const initialState: WatchListState = {
   watchesToShow: watches,
   filters: {
     gender: "",
@@ -23,8 +23,8 @@ const initialState: CartState = {
   },
 };
 
-const cartSlice = createSlice({
-  name: "cart",
+const watchListSlice = createSlice({
+  name: "watchList",
   initialState,
   reducers: {
     searchWatches: (state, action) => {
@@ -66,7 +66,10 @@ const cartSlice = createSlice({
   },
 });
 
-function applyFilters(data: Watch[], filters: CartState["filters"]): Watch[] {
+function applyFilters(
+  data: Watch[],
+  filters: WatchListState["filters"]
+): Watch[] {
   return data.filter((watch) => {
     return (
       (!filters.gender || watch.gender === filters.gender) &&
@@ -83,6 +86,6 @@ function applyFilters(data: Watch[], filters: CartState["filters"]): Watch[] {
   });
 }
 
-export default cartSlice.reducer;
+export default watchListSlice.reducer;
 export const { searchWatches, sortWatches, setFilter, clearFilters } =
-  cartSlice.actions;
+  watchListSlice.actions;

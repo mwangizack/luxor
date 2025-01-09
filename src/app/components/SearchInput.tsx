@@ -2,7 +2,7 @@ import React from "react";
 import { Autocomplete, TextField } from "@mui/material";
 import { watches } from "../data/watches";
 import { useDispatch } from "react-redux";
-import { searchWatches } from "../store/reducers/cartSlice";
+import { searchWatches } from "../store/reducers/watchListSlice";
 
 function SearchInput() {
   const [searchValue, setSearchValue] = React.useState("");

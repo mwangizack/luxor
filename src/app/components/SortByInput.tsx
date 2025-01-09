@@ -7,7 +7,7 @@ import {
   Select,
 } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { sortWatches } from "../store/reducers/cartSlice";
+import { sortWatches } from "../store/reducers/watchListSlice";
 
 function SortByInput() {
   const dispatch = useDispatch();
@@ -17,9 +17,15 @@ function SortByInput() {
   }
 
   return (
-    <Box sx={{ display: "flex", gap: { xs: "0.4rem", sm: "1rem", md: "1rem" } }}>
+    <Box
+      sx={{ display: "flex", gap: { xs: "0.4rem", sm: "1rem", md: "1rem" } }}
+    >
       <FormHelperText
-        sx={{ alignSelf: "flex-end", fontSize: { xs: "1.1rem", sm: "1.2rem", md: "1.2rem" }, color: "black" }}
+        sx={{
+          alignSelf: "flex-end",
+          fontSize: { xs: "1.1rem", sm: "1.2rem", md: "1.2rem" },
+          color: "black",
+        }}
       >
         Sort by:
       </FormHelperText>
