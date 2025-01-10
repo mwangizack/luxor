@@ -7,6 +7,8 @@ import IconButton from "@mui/material/IconButton";
 import { Badge, Link } from "@mui/material";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 import { Cinzel } from "next/font/google";
+import { RootState } from "../store/store";
+import { useSelector } from "react-redux";
 
 const cinzelFont = Cinzel({
   subsets: ["latin"],
@@ -15,6 +17,8 @@ const cinzelFont = Cinzel({
 });
 
 function Navbar() {
+  const cartItemsCount = useSelector((state: RootState) => state.cart.totalQuantity);
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -58,7 +62,7 @@ function Navbar() {
             color="inherit"
           >
             <Badge
-              badgeContent={1} //Make it dynamic
+              badgeContent={cartItemsCount}
               color="error"
               anchorOrigin={{
                 vertical: "bottom",

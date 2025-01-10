@@ -8,6 +8,7 @@ export interface Watch {
   price: number;
   stock_count: number;
   image_url: string;
+  quantityInCart: number;
 }
 
 export const watches: Watch[] = [
@@ -21,6 +22,7 @@ export const watches: Watch[] = [
     price: 25000,
     stock_count: 10,
     image_url: "https://example.com/images/eclipse_elite.jpg",
+    quantityInCart: 0,
   },
   {
     id: 2,
@@ -32,6 +34,7 @@ export const watches: Watch[] = [
     price: 45000,
     stock_count: 5,
     image_url: "https://example.com/images/aurum_classic.jpg",
+    quantityInCart: 0,
   },
   {
     id: 3,
@@ -43,6 +46,7 @@ export const watches: Watch[] = [
     price: 35000,
     stock_count: 8,
     image_url: "https://example.com/images/velvet_luxe.jpg",
+    quantityInCart: 0,
   },
   {
     id: 4,
@@ -54,6 +58,7 @@ export const watches: Watch[] = [
     price: 60000,
     stock_count: 12,
     image_url: "https://example.com/images/chrono_master.jpg",
+    quantityInCart: 0,
   },
   {
     id: 5,
@@ -65,6 +70,7 @@ export const watches: Watch[] = [
     price: 40000,
     stock_count: 7,
     image_url: "https://example.com/images/pearl_essence.jpg",
+    quantityInCart: 0,
   },
   {
     id: 6,
@@ -76,6 +82,7 @@ export const watches: Watch[] = [
     price: 50000,
     stock_count: 15,
     image_url: "https://example.com/images/onyx_edge.jpg",
+    quantityInCart: 0,
   },
   {
     id: 7,
@@ -87,6 +94,7 @@ export const watches: Watch[] = [
     price: 48000,
     stock_count: 6,
     image_url: "https://example.com/images/crown_jewel.jpg",
+    quantityInCart: 0,
   },
   {
     id: 8,
@@ -98,6 +106,7 @@ export const watches: Watch[] = [
     price: 30000,
     stock_count: 9,
     image_url: "https://example.com/images/azure_tide.jpg",
+    quantityInCart: 0,
   },
   {
     id: 9,
@@ -109,6 +118,7 @@ export const watches: Watch[] = [
     price: 55000,
     stock_count: 11,
     image_url: "https://example.com/images/shadow_legacy.jpg",
+    quantityInCart: 0,
   },
   {
     id: 10,
@@ -120,6 +130,7 @@ export const watches: Watch[] = [
     price: 42000,
     stock_count: 10,
     image_url: "https://example.com/images/blush_aura.jpg",
+    quantityInCart: 0,
   },
   {
     id: 11,
@@ -131,6 +142,7 @@ export const watches: Watch[] = [
     price: 65000,
     stock_count: 4,
     image_url: "https://example.com/images/meteor_strike.jpg",
+    quantityInCart: 0,
   },
   {
     id: 12,
@@ -142,6 +154,7 @@ export const watches: Watch[] = [
     price: 37000,
     stock_count: 8,
     image_url: "https://example.com/images/ivory_halo.jpg",
+    quantityInCart: 0,
   },
   {
     id: 13,
@@ -153,6 +166,7 @@ export const watches: Watch[] = [
     price: 32000,
     stock_count: 14,
     image_url: "https://example.com/images/glacier_flow.jpg",
+    quantityInCart: 0,
   },
   {
     id: 14,
@@ -164,6 +178,7 @@ export const watches: Watch[] = [
     price: 50000,
     stock_count: 5,
     image_url: "https://example.com/images/sapphire_pulse.jpg",
+    quantityInCart: 0,
   },
   {
     id: 15,
@@ -175,6 +190,7 @@ export const watches: Watch[] = [
     price: 62000,
     stock_count: 7,
     image_url: "https://example.com/images/obsidian_prime.jpg",
+    quantityInCart: 0,
   },
   {
     id: 16,
@@ -186,6 +202,7 @@ export const watches: Watch[] = [
     price: 45000,
     stock_count: 6,
     image_url: "https://example.com/images/golden_horizon.jpg",
+    quantityInCart: 0,
   },
   {
     id: 17,
@@ -197,6 +214,7 @@ export const watches: Watch[] = [
     price: 58000,
     stock_count: 9,
     image_url: "https://example.com/images/aurora_crest.jpg",
+    quantityInCart: 0,
   },
   {
     id: 18,
@@ -208,6 +226,7 @@ export const watches: Watch[] = [
     price: 40000,
     stock_count: 0,
     image_url: "https://example.com/images/rose_twilight.jpg",
+    quantityInCart: 0,
   },
   {
     id: 19,
@@ -219,6 +238,7 @@ export const watches: Watch[] = [
     price: 31000,
     stock_count: 12,
     image_url: "https://example.com/images/steel_eclipse.jpg",
+    quantityInCart: 0,
   },
   {
     id: 20,
@@ -230,5 +250,6 @@ export const watches: Watch[] = [
     price: 36000,
     stock_count: 8,
     image_url: "https://example.com/images/lunar_solace.jpg",
+    quantityInCart: 0,
   },
 ];

@@ -97,13 +97,7 @@ function LandingContent() {
         {watches.map((watch) => (
           <WatchCard
             key={watch.id}
-            name={watch.name}
-            dialSize={watch.dial_size_mm}
-            material={watch.material}
-            gender={watch.gender}
-            price={watch.price}
-            stock_count={watch.stock_count}
-            image_url={watch.image_url}
+            watch={watch}
           />
         ))}
       </Box>
