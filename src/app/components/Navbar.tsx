@@ -9,6 +9,7 @@ import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 import { Cinzel } from "next/font/google";
 import { RootState } from "../store/store";
 import { useSelector } from "react-redux";
+import { useRouter } from "next/navigation";
 
 const cinzelFont = Cinzel({
   subsets: ["latin"],
@@ -17,7 +18,10 @@ const cinzelFont = Cinzel({
 });
 
 function Navbar() {
-  const cartItemsCount = useSelector((state: RootState) => state.cart.totalQuantity);
+  const cartItemsCount = useSelector(
+    (state: RootState) => state.cart.totalQuantity
+  );
+  const router = useRouter();
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -43,7 +47,7 @@ function Navbar() {
                 cursor: "pointer",
               },
             }}
-            onClick={() => {}} // Add link to homepage
+            onClick={() => router.push("/")}
           >
             Luxor
           </Link>
@@ -69,9 +73,7 @@ function Navbar() {
                 horizontal: "right",
               }}
             >
-              <LocalMallOutlinedIcon
-                fontSize="medium"
-              />
+              <LocalMallOutlinedIcon fontSize="medium" />
             </Badge>
           </IconButton>
         </Toolbar>
