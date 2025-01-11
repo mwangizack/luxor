@@ -19,7 +19,7 @@ function EmptyCart() {
     >
       <ProductionQuantityLimitsIcon fontSize="inherit" color="error" />
       <Typography variant="h1" sx={{ fontSize: "2rem" }}>
-        Oops! Your cart is empty.
+        Oops! Your cart is empty...
       </Typography>
       <Button
         variant="contained"
