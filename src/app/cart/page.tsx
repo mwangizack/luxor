@@ -7,7 +7,7 @@ import CartItem from "../components/CartItem";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import EmptyCart from "../components/EmptyCart";
-import EastIcon from '@mui/icons-material/East';
+import EastIcon from "@mui/icons-material/East";
 
 function page() {
   const router = useRouter();
@@ -102,15 +102,18 @@ function page() {
             }}
           >
             <Typography
-              sx={{ fontWeight: "700", mb: "1rem", fontSize: "1.5rem", textAlign: "center" }}
+              sx={{
+                fontWeight: "700",
+                mb: "1rem",
+                fontSize: "1.5rem",
+                textAlign: "center",
+              }}
             >
               ORDER SUMMARY
             </Typography>
             <Box sx={{ display: "flex", justifyContent: "space-between" }}>
               <Typography>Cart total</Typography>
-              <Typography>
-                KES {cartTotal.toLocaleString()}
-              </Typography>
+              <Typography>KES {cartTotal.toLocaleString()}</Typography>
             </Box>
             <Box sx={{ display: "flex", justifyContent: "space-between" }}>
               <Typography>Shipping cost</Typography>
@@ -124,7 +127,14 @@ function page() {
               <Typography>Tax</Typography>
               <Typography>TBD</Typography>
             </Box>
-            <Box sx={{ display: "flex", justifyContent: "space-between", borderTop: "1px solid #777777", paddingTop: "1rem" }}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                borderTop: "1px solid #777777",
+                paddingTop: "1rem",
+              }}
+            >
               <Typography sx={{ fontSize: "1.5rem", fontWeight: "600" }}>
                 Grand Total
               </Typography>
@@ -138,7 +148,12 @@ function page() {
                 disableElevation
                 endIcon={<EastIcon />}
                 color="primary"
-                sx={{ textTransform: "none", width: "100%", fontWeight: "700", letterSpacing: "1px" }}
+                sx={{
+                  textTransform: "none",
+                  width: "100%",
+                  fontWeight: "700",
+                  letterSpacing: "1px",
+                }}
               >
                 Checkout
               </Button>
