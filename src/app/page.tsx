@@ -6,6 +6,7 @@ import LandingContent from "./components/LandingContent";
 import Footer from "./components/Footer";
 import { useSelector } from "react-redux";
 import { RootState } from "./store/store";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import React from "react";
 import { useRouter } from "next/navigation";
 
@@ -32,13 +33,14 @@ export default function Home() {
             onClick={() => router.push("/cart")}
             sx={{
               textTransform: "none",
-              fontWeight: "600",
+              fontSize: "1.5rem",
               padding: "0.5rem 2rem",
               position: "fixed",
               right: 20,
               bottom: 40,
             }}
           >
+            <ShoppingCartOutlinedIcon sx={{ mr: 1 }} />
             View Cart
           </Fab>
         )}
