@@ -32,7 +32,15 @@ function Navbar() {
           padding: { xs: "5px 30px", sm: "5px 65px", md: "5px 100px" },
         }}
       >
-        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            "&.MuiToolbar-root": {
+              padding: 0,
+            },
+          }}
+        >
           {/* Luxor Logo */}
           <Link
             variant="button"
@@ -62,7 +70,8 @@ function Navbar() {
                 md: "large",
               },
             }}
-            aria-label="notifications"
+            onClick={() => router.push("/cart")}
+            aria-label="cart"
             color="inherit"
           >
             <Badge
