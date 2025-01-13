@@ -65,7 +65,7 @@ function page() {
           }}
         >
           {/* Cart items */}
-          <Stack sx={{ width: "65%", borderTop: "1px solid #d3d3d3" }}>
+          <Stack sx={{ width: { xs: "100%", sm: "100%", md: "65%" }, borderTop: "1px solid #d3d3d3" }}>
             {Object.values(watchesInCart).map((watch) => {
               return <CartItem key={watch.id} watch={watch} />;
             })}
@@ -94,7 +94,7 @@ function page() {
           <Stack
             sx={{
               backgroundColor: "#d3d3d3",
-              width: "30%",
+              width: { xs: "100%", sm: "100%", md: "30%" },
               padding: "1rem 2rem",
               gap: "1rem",
               borderRadius: "4px",

@@ -29,12 +29,13 @@ function CartItem({ watch }) {
         justifyContent: "space-between",
         paddingBottom: "1rem",
         borderBottom: "1px solid #d3d3d3",
+        gap: "0.5rem",
       }}
     >
       {/* Watch image */}
       <Box
         sx={{
-          width: "12rem",
+          minWidth: "12rem",
           height: "15rem",
           backgroundImage: "url(), url('../../../picture-not-available.jpg')", // Add the watch image_url
           backgroundRepeat: "no-repeat",
@@ -76,7 +77,7 @@ function CartItem({ watch }) {
         <Box
           sx={{
             display: "flex",
-            gap: "0.7rem",
+            gap: "0.5rem",
             justifyContent: "center",
           }}
         >
@@ -87,14 +88,20 @@ function CartItem({ watch }) {
               handleDecrementQuantity(watch.id);
             }}
             disabled={watch.quantityInCart <= 1}
-            sx={{ textTransform: "none", padding: "0.5rem 1rem" }}
+            sx={{
+              textTransform: "none",
+              "&.MuiButton-root": {
+                minWidth: "40px",
+                padding: "0.1rem 0.2rem",
+              },
+            }}
           >
-            <RemoveIcon />
+            <RemoveIcon fontSize="small" />
           </Button>
           <Box
             sx={{
               border: "1px solid #d3d3d3",
-              padding: "0.5rem 2rem",
+              padding: "0.2rem 1.7rem",
               borderRadius: "4px",
               display: "flex",
               justifyContent: "center",
@@ -110,9 +117,15 @@ function CartItem({ watch }) {
               handleIncrementQuantity(watch.id);
             }}
             disabled={watch.stock_count === 0}
-            sx={{ textTransform: "none", padding: "0.5rem 1rem" }}
+            sx={{
+              textTransform: "none",
+              "&.MuiButton-root": {
+                minWidth: "40px",
+                padding: "0.1rem 0.2rem",
+              },
+            }}
           >
-            <AddIcon />
+            <AddIcon fontSize="small" />
           </Button>
         </Box>
       </Stack>
