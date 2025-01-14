@@ -1,10 +1,10 @@
 "use client";
 import { createSlice } from "@reduxjs/toolkit";
-import { watches } from "@/app/data/watches";
 import { Watch } from "@/app/data/watches";
 
 interface WatchListState {
   watchesToShow: Watch[];
+  watches: Watch[];
   filters: {
     gender: string;
     dialSize: string;
@@ -14,7 +14,8 @@ interface WatchListState {
 }
 
 const initialState: WatchListState = {
-  watchesToShow: watches,
+  watchesToShow: [],
+  watches: [],
   filters: {
     gender: "",
     dialSize: "",
@@ -29,9 +30,9 @@ const watchListSlice = createSlice({
   reducers: {
     searchWatches: (state, action) => {
       if (!action.payload) {
-        state.watchesToShow = watches;
+        state.watchesToShow = state.watches;
       } else {
-        state.watchesToShow = watches.filter((watch) =>
+        state.watchesToShow = state.watches.filter((watch) =>
           watch.name.toLowerCase().includes(action.payload.toLowerCase())
         );
       }
@@ -52,7 +53,7 @@ const watchListSlice = createSlice({
     setFilter: (state, action) => {
       const { filterName, value } = action.payload;
       state.filters[filterName] = value;
-      state.watchesToShow = applyFilters(watches, state.filters);
+      state.watchesToShow = applyFilters(state.watches, state.filters);
     },
     clearFilters: (state) => {
       state.filters = {
@@ -61,7 +62,11 @@ const watchListSlice = createSlice({
         material: "",
         bracelet: "",
       };
-      state.watchesToShow = watches;
+      state.watchesToShow = state.watches;
+    },
+    setWatches: (state, action) => {
+      state.watches = action.payload;
+      state.watchesToShow = action.payload;
     },
   },
 });
@@ -87,5 +92,10 @@ function applyFilters(
 }
 
 export default watchListSlice.reducer;
-export const { searchWatches, sortWatches, setFilter, clearFilters } =
-  watchListSlice.actions;
+export const {
+  searchWatches,
+  sortWatches,
+  setFilter,
+  clearFilters,
+  setWatches,
+} = watchListSlice.actions;

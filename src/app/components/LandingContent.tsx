@@ -5,16 +5,35 @@ import SearchInput from "./SearchInput";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import SortByInput from "./SortByInput";
 import FiltersSelectBoxes from "./FiltersSelectBoxes";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import WatchCard from "./WatchCard";
+import { setWatches } from "../store/reducers/watchListSlice";
+
+const axios = require("axios");
 
 function LandingContent() {
+  const dispatch = useDispatch();
   const [showFilters, setShowFilters] = React.useState(false);
   const watches = useSelector(
     (state: RootState) => state.watchList.watchesToShow
   );
   const isXsAndBelow = useMediaQuery((theme) => theme.breakpoints.only("xs"));
+
+  React.useEffect(() => {
+    const fetchWatches = async () => {
+      try {
+        const response = await axios.get(
+          "https://my.api.mockaroo.com/api/watches?key=7d77e430"
+        );
+        dispatch(setWatches(response.data));
+      } catch (err) {
+        console.error(`Error fetching watches: ${err} `);
+      }
+    };
+
+    fetchWatches();
+  }, []);
 
   return (
     <Box
@@ -95,10 +114,7 @@ function LandingContent() {
         }}
       >
         {watches.map((watch) => (
-          <WatchCard
-            key={watch.id}
-            watch={watch}
-          />
+          <WatchCard key={watch.id} watch={watch} />
         ))}
       </Box>
     </Box>
