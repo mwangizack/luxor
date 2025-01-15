@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "@/app/utils/theme";
 import { StoreProvider } from "./store/provider";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistor } from "./store/store";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +26,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <StoreProvider>
+          <PersistGate persistor={persistor}>
           <ThemeProvider theme={theme}>{children}</ThemeProvider>
+          </PersistGate>
         </StoreProvider>
       </body>
     </html>
