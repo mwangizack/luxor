@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Box, Button, Typography, useMediaQuery } from "@mui/material";
+import { Box, Button, Stack, Typography, useMediaQuery } from "@mui/material";
 import SearchInput from "./SearchInput";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import SortByInput from "./SortByInput";
@@ -9,12 +9,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import WatchCard from "./WatchCard";
 import { setWatches } from "../store/reducers/watchListSlice";
+import Skeleton from "@mui/material/Skeleton";
 
 const axios = require("axios");
 
 function LandingContent() {
   const dispatch = useDispatch();
   const [showFilters, setShowFilters] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(true);
   const watches = useSelector(
     (state: RootState) => state.watchList.watchesToShow
   );
@@ -22,6 +24,7 @@ function LandingContent() {
 
   React.useEffect(() => {
     const fetchWatches = async () => {
+      setIsLoading(true);
       try {
         const response = await axios.get(
           "https://my.api.mockaroo.com/api/watches?key=7d77e430"
@@ -29,6 +32,8 @@ function LandingContent() {
         dispatch(setWatches(response.data));
       } catch (err) {
         console.error(`Error fetching watches: ${err} `);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -113,9 +118,57 @@ function LandingContent() {
           flexWrap: "wrap",
         }}
       >
-        {watches.map((watch) => (
-          <WatchCard key={watch.id} watch={watch} />
-        ))}
+        {isLoading
+          ? // Show skeletons if still loading
+            [...Array(6)].map((_, index) => (
+              <Stack
+                key={index}
+                gap="1rem"
+                sx={{
+                  width: { xs: "22rem", sm: "22rem", md: "24rem" },
+                  height: "26rem",
+                  border: "1px solid #d3d3d3",
+                  borderRadius: "4px",
+                  marginTop: "20px",
+                }}
+              >
+                <Skeleton
+                  animation="wave"
+                  variant="rectangular"
+                  width="100%"
+                  height="52%"
+                />
+                <Stack
+                  alignItems="center"
+                  justifyContent="center"
+                  sx={{ pl: "3rem", pr: "3rem" }}
+                >
+                  <Skeleton
+                    animation="wave"
+                    variant="text"
+                    sx={{ fontSize: "2rem", width: "60%" }}
+                  />
+                  <Skeleton
+                    animation="wave"
+                    variant="text"
+                    sx={{ fontSize: "1.8rem", width: "90%" }}
+                  />
+                  <Skeleton
+                    animation="wave"
+                    variant="text"
+                    sx={{ fontSize: "1.8rem", width: "50%" }}
+                  />
+                  <Skeleton
+                    animation="wave"
+                    variant="rectangular"
+                    width="60%"
+                    height="2.5rem"
+                    sx={{ mt: "1.3rem", borderRadius: "4px" }}
+                  />
+                </Stack>
+              </Stack>
+            ))
+          : watches.map((watch) => <WatchCard key={watch.id} watch={watch} />)}
       </Box>
     </Box>
   );
