@@ -10,6 +10,7 @@ import { RootState } from "../store/store";
 import WatchCard from "./WatchCard";
 import { setWatches } from "../store/reducers/watchListSlice";
 import Skeleton from "@mui/material/Skeleton";
+import Pagination from "@mui/material/Pagination";
 
 const axios = require("axios");
 
@@ -17,26 +18,33 @@ function LandingContent() {
   const dispatch = useDispatch();
   const [showFilters, setShowFilters] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(true);
+  const [page, setPage] = React.useState(1);
   const watches = useSelector(
     (state: RootState) => state.watchList.watchesToShow
   );
   const isXsAndBelow = useMediaQuery((theme) => theme.breakpoints.only("xs"));
 
-  React.useEffect(() => {
-    const fetchWatches = async () => {
-      setIsLoading(true);
-      try {
-        const response = await axios.get(
-          "https://my.api.mockaroo.com/api/watches?key=7d77e430"
-        );
-        dispatch(setWatches(response.data));
-      } catch (err) {
-        console.error(`Error fetching watches: ${err} `);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+  const fetchWatches = async (offset: number = 0, limit: number = 4) => {
+    setIsLoading(true);
+    try {
+      const response = await axios.get(
+        `https://my.api.mockaroo.com/api/watches?key=7d77e430&offset=${offset}&limit=${limit}`
+      );
+      dispatch(setWatches(response.data));
+    } catch (err) {
+      console.error(`Error fetching watches: ${err} `);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
+  function handleChangePage(event: React.ChangeEvent<unknown>, value: number) {
+    setPage(value);
+    const offset = value * 4 - 4;
+    fetchWatches(offset);
+  }
+
+  React.useEffect(() => {
     fetchWatches();
   }, []);
 
@@ -170,6 +178,21 @@ function LandingContent() {
             ))
           : watches.map((watch) => <WatchCard key={watch.id} watch={watch} />)}
       </Box>
+
+      {/* Pagination */}
+      {!watches && (
+        <Stack sx={{ mt: "2rem" }} alignItems="center">
+          <Pagination
+            count={5}
+            variant="outlined"
+            shape="rounded"
+            color="primary"
+            size="large"
+            page={page}
+            onChange={handleChangePage}
+          />
+        </Stack>
+      )}
     </Box>
   );
 }
