@@ -65,23 +65,21 @@ function LandingContent() {
       </Typography>
 
       {/* Inputs */}
-      <Box
-        sx={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "space-between",
-          marginTop: "2.4vh",
-          flexWrap: "wrap",
-          columnGap: "1.1vw",
-          rowGap: "1.97vh",
-        }}
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        rowGap="1.97vh"
+        columnGap="1.1vw"
+        flexWrap="wrap"
+        width="100%"
+        marginTop="2.4vh"
       >
-        <Box
+        <Stack
+          direction="row"
+          gap="3.3vw"
+          flexWrap="wrap"
           sx={{
-            display: "flex",
-            gap: "3.3vw",
-            flexWrap: "wrap",
-            justifyContent: { xs: "space-between" }
+            justifyContent: { xs: "space-between" },
           }}
         >
           <SearchInput />
@@ -101,11 +99,11 @@ function LandingContent() {
 
           {/* Show the sort input here for extra small devices */}
           {isXsAndBelow && <SortByInput />}
-        </Box>
+        </Stack>
 
         {/* Show the sort input here for larger devices */}
         {!isXsAndBelow && <SortByInput />}
-      </Box>
+      </Stack>
 
       {/* Filters */}
       {showFilters && <FiltersSelectBoxes />}
@@ -118,13 +116,13 @@ function LandingContent() {
       )}
 
       {/* Watch cards */}
-      <Box
+      <Stack
+        direction="row"
+        marginTop="2vh"
+        flexWrap="wrap"
+        justifyContent="space-between"
         sx={{
-          marginTop: "20px",
-          display: "flex",
           gap: { xs: "5vh", sm: "4vw", md: "3vw" },
-          flexWrap: "wrap",
-          justifyContent: "space-between",
         }}
       >
         {isLoading
@@ -178,7 +176,7 @@ function LandingContent() {
               </Stack>
             ))
           : watches.map((watch) => <WatchCard key={watch.id} watch={watch} />)}
-      </Box>
+      </Stack>
 
       {/* Pagination */}
       {watches && (

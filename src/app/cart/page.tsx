@@ -17,7 +17,7 @@ function page() {
   return (
     <Stack>
       {/* Back text button */}
-      <Box sx={{ display: "flex", alignItems: "center", gap: "1vw" }}>
+      <Stack direction="row" alignItems="center" gap="1vw">
         <KeyboardBackspaceIcon fontSize="small" color="primary" />
         <Link
           variant="button"
@@ -30,10 +30,10 @@ function page() {
         >
           Continue shopping
         </Link>
-      </Box>
+      </Stack>
 
       {/* Cart title */}
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
+      <Stack direction="row" justifyContent="center">
         <Typography
           variant="h1"
           sx={{
@@ -48,21 +48,19 @@ function page() {
         >
           My Cart
         </Typography>
-      </Box>
+      </Stack>
 
       {/* If cart is empty, show EmptyCart component, else show cart items */}
       {Object.keys(watchesInCart).length === 0 ? (
         <EmptyCart />
       ) : (
-        <Box
-          sx={{
-            width: "100%",
-            display: "flex",
-            marginTop: "2vh",
-            gap: "4vw",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-          }}
+        <Stack
+          direction="row"
+          marginTop="2vh"
+          gap="4vw"
+          justifyContent="space-between"
+          width="100%"
+          flexWrap="wrap"
         >
           {/* Cart items */}
           <Stack
@@ -76,15 +74,13 @@ function page() {
             })}
 
             {/* Cart Total */}
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "flex-end",
-                gap: "3vw",
-                marginTop: "2vh",
-                paddingBottom: "2vh",
-                borderBottom: "1px solid #d3d3d3",
-              }}
+            <Stack
+              direction="row"
+              justifyContent="flex-end"
+              gap="3vw"
+              marginTop="2vh"
+              paddingBottom="2vh"
+              borderBottom="1px solid #d3d3d3"
             >
               <Typography sx={{ fontWeight: 700, fontSize: "1.2rem" }}>
                 Cart Total:
@@ -92,7 +88,7 @@ function page() {
               <Typography sx={{ fontWeight: 700, fontSize: "1.2rem" }}>
                 KES {cartTotal.toLocaleString()}
               </Typography>
-            </Box>
+            </Stack>
           </Stack>
 
           {/* Order Summary */}
@@ -116,29 +112,27 @@ function page() {
             >
               ORDER SUMMARY
             </Typography>
-            <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            <Stack direction="row" justifyContent="space-between">
               <Typography>Cart total</Typography>
               <Typography>KES {cartTotal.toLocaleString()}</Typography>
-            </Box>
-            <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            </Stack>
+            <Stack direction="row" justifyContent="space-between">
               <Typography>Shipping cost</Typography>
               <Typography>TBD</Typography>
-            </Box>
-            <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            </Stack>
+            <Stack direction="row" justifyContent="space-between">
               <Typography>Discount</Typography>
               <Typography>-KES 0</Typography>
-            </Box>
-            <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            </Stack>
+            <Stack direction="row" justifyContent="space-between">
               <Typography>Tax</Typography>
               <Typography>TBD</Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "space-between",
-                borderTop: "1px solid #777777",
-                paddingTop: "2vh",
-              }}
+            </Stack>
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              borderTop="1px solid #777777"
+              paddingTop="2vh"
             >
               <Typography sx={{ fontSize: "1.5rem", fontWeight: "600" }}>
                 Grand Total
@@ -146,8 +140,8 @@ function page() {
               <Typography sx={{ fontSize: "1.5rem", fontWeight: "600" }}>
                 KES {cartTotal.toLocaleString()}
               </Typography>
-            </Box>
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
+            </Stack>
+            <Stack direction="row" justifyContent="center">
               <Button
                 variant="contained"
                 disableElevation
@@ -162,9 +156,9 @@ function page() {
               >
                 Checkout
               </Button>
-            </Box>
+            </Stack>
           </Stack>
-        </Box>
+        </Stack>
       )}
     </Stack>
   );

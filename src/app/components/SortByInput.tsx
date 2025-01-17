@@ -5,6 +5,7 @@ import {
   FormHelperText,
   MenuItem,
   Select,
+  Stack,
 } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { sortWatches } from "../store/reducers/watchListSlice";
@@ -17,8 +18,9 @@ function SortByInput() {
   }
 
   return (
-    <Box
-      sx={{ display: "flex", gap: { xs: "0.4rem", sm: "1rem", md: "1rem" } }}
+    <Stack
+      direction="row"
+      sx={{ gap: { xs: "0.4rem", sm: "1rem", md: "1rem" } }}
     >
       <FormHelperText
         sx={{
@@ -46,7 +48,7 @@ function SortByInput() {
           <MenuItem value="price ascending">Price low to high</MenuItem>
         </Select>
       </FormControl>
-    </Box>
+    </Stack>
   );
 }
 

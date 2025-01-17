@@ -10,12 +10,10 @@ function EmptyCart() {
   return (
     <Stack
       gap={1}
-      sx={{
-        justifyContent: "center",
-        alignItems: "center",
-        marginTop: "7rem",
-        fontSize: "8rem",
-      }}
+      justifyContent="center"
+      alignItems="center"
+      marginTop="7rem"
+      fontSize="8rem"
     >
       <ProductionQuantityLimitsIcon fontSize="inherit" color="error" />
       <Typography variant="h1" sx={{ fontSize: "2rem" }}>

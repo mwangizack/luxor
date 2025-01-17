@@ -1,4 +1,11 @@
-import { Box, Button, FormControl, MenuItem, Select } from "@mui/material";
+import {
+  Box,
+  Button,
+  FormControl,
+  MenuItem,
+  Select,
+  Stack,
+} from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { setFilter, clearFilters } from "../store/reducers/watchListSlice";
 import FilterAltOffIcon from "@mui/icons-material/FilterAltOff";
@@ -37,12 +44,12 @@ function FiltersSelectBoxes() {
   }
 
   return (
-    <Box
+    <Stack
+      direction="row"
+      marginTop="2.4vh"
+      flexWrap="wrap"
       sx={{
-        marginTop: "2.4vh",
-        display: "flex",
         gap: { xs: "3vw", sm: "1.1vw", md: "1.1vw" },
-        flexWrap: "wrap",
         justifyContent: {
           xs: "space-between",
           sm: "space-between",
@@ -150,7 +157,7 @@ function FiltersSelectBoxes() {
       >
         Clear all
       </Button>
-    </Box>
+    </Stack>
   );
 }
 

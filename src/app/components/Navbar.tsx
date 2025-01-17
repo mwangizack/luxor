@@ -4,7 +4,7 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import { Badge, Link } from "@mui/material";
+import { Badge, Link, Stack } from "@mui/material";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 import { Cinzel } from "next/font/google";
 import { RootState } from "../store/store";
@@ -24,7 +24,7 @@ function Navbar() {
   const router = useRouter();
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Stack direction="row" sx={{ flexGrow: 1 }}>
       <AppBar
         position="static"
         sx={{
@@ -87,7 +87,7 @@ function Navbar() {
           </IconButton>
         </Toolbar>
       </AppBar>
-    </Box>
+    </Stack>
   );
 }
 
