@@ -30,7 +30,7 @@ function WatchCard({ watch }) {
   return (
     <Paper
       elevation={3}
-      sx={{ width: { xs: "22rem", sm: "22rem", md: "24rem" }, height: "26rem" }}
+      sx={{ width: { xs: "90vw", sm: "40vw", md: "26.6vw" }, height: "26rem" }}
     >
       {/* Watch image with fallback */}
       <Box
@@ -64,7 +64,7 @@ function WatchCard({ watch }) {
       </Box>
 
       {/* Watch details */}
-      <Stack sx={{ alignItems: "center", padding: "1rem 3rem" }}>
+      <Stack sx={{ alignItems: "center", padding: "1rem 3.3vw" }}>
         <Typography
           sx={{
             fontWeight: "400",
@@ -74,7 +74,13 @@ function WatchCard({ watch }) {
         >
           {watch.name}
         </Typography>
-        <Typography sx={{ color: "#777777" }}>
+        <Typography
+          sx={{
+            color: "#777777",
+            textWrap: "nowrap",
+            textOverflow: "ellipsis",
+          }}
+        >
           {watch.dial_size_mm}mm,{" "}
           {watch.material.charAt(0).toUpperCase() + watch.material.slice(1)},{" "}
           {watch.gender.charAt(0).toUpperCase() + watch.gender.slice(1)}

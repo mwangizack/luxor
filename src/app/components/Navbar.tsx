@@ -29,7 +29,7 @@ function Navbar() {
         position="static"
         sx={{
           backgroundColor: "secondary.main",
-          padding: { xs: "5px 30px", sm: "5px 65px", md: "5px 100px" },
+          padding: "0.6vh 7vw",
         }}
       >
         <Toolbar

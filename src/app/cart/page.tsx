@@ -17,7 +17,7 @@ function page() {
   return (
     <Stack>
       {/* Back text button */}
-      <Box sx={{ display: "flex", alignItems: "center", gap: "0.2rem" }}>
+      <Box sx={{ display: "flex", alignItems: "center", gap: "1vw" }}>
         <KeyboardBackspaceIcon fontSize="small" color="primary" />
         <Link
           variant="button"
@@ -37,7 +37,7 @@ function page() {
         <Typography
           variant="h1"
           sx={{
-            marginTop: "1rem",
+            marginTop: "2vh",
             fontSize: {
               xs: "1.7rem",
               sm: "1.9rem",
@@ -58,8 +58,8 @@ function page() {
           sx={{
             width: "100%",
             display: "flex",
-            marginTop: "20px",
-            gap: "2rem",
+            marginTop: "2vh",
+            gap: "4vw",
             justifyContent: "space-between",
             flexWrap: "wrap",
           }}
@@ -80,9 +80,9 @@ function page() {
               sx={{
                 display: "flex",
                 justifyContent: "flex-end",
-                gap: "1.5rem",
-                marginTop: "20px",
-                paddingBottom: "20px",
+                gap: "3vw",
+                marginTop: "2vh",
+                paddingBottom: "2vh",
                 borderBottom: "1px solid #d3d3d3",
               }}
             >
@@ -100,9 +100,9 @@ function page() {
             sx={{
               backgroundColor: "#d3d3d3",
               width: { xs: "100%", sm: "100%", md: "30%" },
-              padding: "1rem 2rem",
+              padding: "2vh 2vw",
               gap: "1rem",
-              borderRadius: "4px",
+              borderRadius: "0.25rem",
               height: "max-content",
             }}
           >
@@ -137,7 +137,7 @@ function page() {
                 display: "flex",
                 justifyContent: "space-between",
                 borderTop: "1px solid #777777",
-                paddingTop: "1rem",
+                paddingTop: "2vh",
               }}
             >
               <Typography sx={{ fontSize: "1.5rem", fontWeight: "600" }}>
@@ -157,7 +157,7 @@ function page() {
                   textTransform: "none",
                   width: "100%",
                   fontWeight: "700",
-                  letterSpacing: "1px",
+                  letterSpacing: "0.06rem",
                 }}
               >
                 Checkout

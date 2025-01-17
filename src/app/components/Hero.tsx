@@ -14,12 +14,15 @@ function Hero() {
         backgroundPosition: "center",
         display: "flex",
         justifyContent: "center",
-        padding: "100px 0",
+        padding: "12.3vh 0",
       }}
     >
       <Stack
         alignItems="center"
-        sx={{ width: "70vw", marginTop: { xs: "10vh", sm: "22vh", md: "25vh" } }}
+        sx={{
+          width: "70vw",
+          marginTop: { xs: "10vh", sm: "22vh", md: "25vh" },
+        }}
       >
         {/* Headline */}
         <Typography
@@ -38,7 +41,7 @@ function Hero() {
         <Typography
           variant="h3"
           sx={{
-            marginTop: "0.5rem",
+            marginTop: "0.9vh",
             color: "rgb(255, 255, 255, 0.7)",
             fontSize: { xs: "1rem", sm: "1.2rem", md: "1.4rem" },
             fontWeight: "400",
@@ -56,12 +59,12 @@ function Hero() {
           href="#content-section"
           disableElevation
           sx={{
-            marginTop: "2rem",
+            marginTop: "3.9vh",
             fontSize: "1.2rem",
             fontWeight: "600",
             textTransform: "none",
-            padding: { xs: "5px 20px", sm: "5px 50px", md: "5px 70px" },
-            width: { xs: "8rem", sm: "12rem", md: "15rem" },
+            padding: "0.6vh 4.8vw",
+            width: "max-content",
             textAlign: "center",
           }}
         >
@@ -69,23 +72,21 @@ function Hero() {
         </Button>
 
         {/* Arrow Icon */}
-      <ExpandMoreIcon
-        fontSize="large"
-        sx={{
-          display: {
-            xs: "none",
-            sm: "initial",
-            md: "initial",
-          },
-          marginTop: "7rem",
-          cursor: "pointer",
-          color: "#FFF",
-          animation: "moveUpAndDown 2s infinite",
-        }}
-      />
+        <ExpandMoreIcon
+          fontSize="large"
+          sx={{
+            display: {
+              xs: "none",
+              sm: "initial",
+              md: "initial",
+            },
+            marginTop: "13.8vh",
+            cursor: "pointer",
+            color: "#FFF",
+            animation: "moveUpAndDown 2s infinite",
+          }}
+        />
       </Stack>
-
-      
     </section>
   );
 }

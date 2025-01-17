@@ -33,14 +33,15 @@ export default function Home() {
             onClick={() => router.push("/cart")}
             sx={{
               textTransform: "none",
-              fontSize: "1.5rem",
-              padding: "0.5rem 2rem",
+              fontSize: { xs: "1rem", sm: "1.2rem", md: "1.5rem" },
+              padding: "0.9vh 2.3vw",
               position: "fixed",
               right: 20,
               bottom: 40,
+              borderRadius: "1vw",
             }}
           >
-            <ShoppingCartOutlinedIcon sx={{ mr: 1 }} />
+            <ShoppingCartOutlinedIcon sx={{ mr: { xs: "0.3rem", sm: "0.5rem", md: "0.5rem" }, fontSize: { xs: "18px", sm: "20px", md: "24px" }, }}  />
             View Cart
           </Fab>
         )}

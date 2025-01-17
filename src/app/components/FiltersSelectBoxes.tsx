@@ -39,14 +39,19 @@ function FiltersSelectBoxes() {
   return (
     <Box
       sx={{
-        marginTop: "20px",
+        marginTop: "2.4vh",
         display: "flex",
-        gap: { xs: "1.2rem", sm: "1rem", md: "1rem" },
+        gap: { xs: "3vw", sm: "1.1vw", md: "1.1vw" },
         flexWrap: "wrap",
+        justifyContent: {
+          xs: "space-between",
+          sm: "space-between",
+          md: "normal",
+        },
       }}
     >
       {/* Gender */}
-      <FormControl sx={{ width: { xs: "10rem", sm: "9rem", md: "12rem" } }}>
+      <FormControl sx={{ width: { xs: "40vw", sm: "16vw", md: "13.3vw" } }}>
         <Select
           value={gender}
           onChange={handleChangeGender}
@@ -65,7 +70,7 @@ function FiltersSelectBoxes() {
       </FormControl>
 
       {/* Dial size */}
-      <FormControl sx={{ width: { xs: "10rem", sm: "9rem", md: "12rem" } }}>
+      <FormControl sx={{ width: { xs: "40vw", sm: "16vw", md: "13.3vw" } }}>
         <Select
           value={dialSize}
           onChange={handleChangeDialSize}
@@ -84,7 +89,7 @@ function FiltersSelectBoxes() {
       </FormControl>
 
       {/* Materials */}
-      <FormControl sx={{ width: { xs: "10rem", sm: "9rem", md: "12rem" } }}>
+      <FormControl sx={{ width: { xs: "40vw", sm: "16vw", md: "13.3vw" } }}>
         <Select
           value={material}
           onChange={handleChangeMaterial}
@@ -107,7 +112,7 @@ function FiltersSelectBoxes() {
       </FormControl>
 
       {/* Bracelets */}
-      <FormControl sx={{ width: { xs: "10rem", sm: "9rem", md: "12rem" } }}>
+      <FormControl sx={{ width: { xs: "40vw", sm: "16vw", md: "13.3vw" } }}>
         <Select
           value={bracelet}
           onChange={handleChangeBracelet}
@@ -137,8 +142,8 @@ function FiltersSelectBoxes() {
         startIcon={<FilterAltOffIcon />}
         sx={{
           textTransform: "none",
-          padding: "0.75rem 1rem",
-          width: { xs: "8rem", sm: "7rem", md: "10rem" },
+          padding: "1.4vh 1.1vw",
+          width: { xs: "40vw", sm: "16vw", md: "13.3vw" },
           height: "3rem",
         }}
         onClick={() => dispatch(clearFilters())}

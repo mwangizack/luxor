@@ -31,7 +31,7 @@ function SearchInput() {
       )}
       sx={{
         "& .MuiAutocomplete-inputRoot": {
-          width: { xs: "21.2rem", sm: "15rem", md: "20rem" },
+          width: { xs: "86vw", sm: "29vw", md: "22vw" },
           height: "3rem",
         },
       }}

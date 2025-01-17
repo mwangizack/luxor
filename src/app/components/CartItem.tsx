@@ -24,19 +24,21 @@ function CartItem({ watch }) {
   return (
     <Box
       sx={{
-        marginTop: "1rem",
+        marginTop: "2vh",
         display: "flex",
         justifyContent: "space-between",
-        paddingBottom: "1rem",
+        paddingBottom: "2vh",
         borderBottom: "1px solid #d3d3d3",
-        gap: "0.5rem",
+        gap: "0.5vw",
+        flexWrap: { xs: "wrap", sm: "nowrap", md: "nowrap" },
       }}
     >
       {/* Watch image */}
       <Box
         sx={{
-          minWidth: "12rem",
-          height: "15rem",
+          width: { xs: "40vw", sm: "22vw", md: "13.3vw" },
+          minWidth: "10rem",
+          height: "30vh",
           backgroundImage: "url(), url('../../../picture-not-available.jpg')", // Add the watch image_url
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
@@ -77,7 +79,7 @@ function CartItem({ watch }) {
         <Box
           sx={{
             display: "flex",
-            gap: "0.5rem",
+            gap: { xs: "1.5vw", sm: "0.8vw", md: "0.5vw" },
             justifyContent: "center",
           }}
         >
@@ -91,8 +93,8 @@ function CartItem({ watch }) {
             sx={{
               textTransform: "none",
               "&.MuiButton-root": {
-                minWidth: "40px",
-                padding: "0.1rem 0.2rem",
+                minWidth: { xs: "8vw", sm: "4vw", md: "3vw" },
+                padding: "0.2vh 0.2vw",
               },
             }}
           >
@@ -101,8 +103,8 @@ function CartItem({ watch }) {
           <Box
             sx={{
               border: "1px solid #d3d3d3",
-              padding: "0.2rem 1.7rem",
-              borderRadius: "4px",
+              padding: { xs: "0.4vh 4vw", sm: "0.4vh 2vw", md: "0.4vh 1.5vw" },
+              borderRadius: "0.25rem",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -120,8 +122,8 @@ function CartItem({ watch }) {
             sx={{
               textTransform: "none",
               "&.MuiButton-root": {
-                minWidth: "40px",
-                padding: "0.1rem 0.2rem",
+                minWidth: { xs: "8vw", sm: "4vw", md: "3vw" },
+                padding: "0.2vh 0.2vw",
               },
             }}
           >

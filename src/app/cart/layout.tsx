@@ -14,8 +14,8 @@ function layout(props: { children: React.ReactNode }) {
       <Box
         component="main"
         sx={{
-          minHeight: "78vh",
-          padding: { xs: "20px 30px", sm: "20px 65px", md: "20px 100px" },
+          minHeight: "90vh",
+          padding: { padding: "2.4vh 7vw" },
         }}
       >
         {props.children}

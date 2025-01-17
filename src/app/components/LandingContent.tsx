@@ -26,6 +26,7 @@ function LandingContent() {
 
   const fetchWatches = async (offset: number = 0, limit: number = 4) => {
     setIsLoading(true);
+    dispatch(setWatches([]));
     try {
       const response = await axios.get(
         `https://my.api.mockaroo.com/api/watches?key=7d77e430&offset=${offset}&limit=${limit}`
@@ -49,10 +50,7 @@ function LandingContent() {
   }, []);
 
   return (
-    <Box
-      id="content-section"
-      sx={{ padding: { xs: "20px 30px", sm: "20px 65px", md: "20px 100px" } }}
-    >
+    <Box id="content-section" sx={{ padding: "2.4vh 7vw" }}>
       {/* Title */}
       <Typography
         variant="h2"
@@ -72,16 +70,18 @@ function LandingContent() {
           width: "100%",
           display: "flex",
           justifyContent: "space-between",
-          marginTop: "20px",
+          marginTop: "2.4vh",
           flexWrap: "wrap",
-          gap: "1rem",
+          columnGap: "1.1vw",
+          rowGap: "1.97vh",
         }}
       >
         <Box
           sx={{
             display: "flex",
-            gap: { xs: "1rem", sm: "3rem", md: "3rem" },
+            gap: "3.3vw",
             flexWrap: "wrap",
+            justifyContent: { xs: "space-between" }
           }}
         >
           <SearchInput />
@@ -90,8 +90,8 @@ function LandingContent() {
             startIcon={<FilterListIcon />}
             sx={{
               textTransform: "none",
-              padding: "0.75rem 1rem",
-              width: { xs: "8rem", sm: "8rem", md: "10rem" },
+              padding: "1.4vh 1.1vw",
+              width: { xs: "29vw", sm: "14vw", md: "11.1vw" },
               height: "3rem",
             }}
             onClick={() => setShowFilters(!showFilters)}
@@ -104,7 +104,7 @@ function LandingContent() {
         </Box>
 
         {/* Show the sort input here for larger devices */}
-        {isXsAndBelow ? null : <SortByInput />}
+        {!isXsAndBelow && <SortByInput />}
       </Box>
 
       {/* Filters */}
@@ -122,8 +122,9 @@ function LandingContent() {
         sx={{
           marginTop: "20px",
           display: "flex",
-          gap: { xs: "2.75rem", sm: "3.1rem", md: "2.75rem" },
+          gap: { xs: "5vh", sm: "4vw", md: "3vw" },
           flexWrap: "wrap",
+          justifyContent: "space-between",
         }}
       >
         {isLoading
@@ -180,7 +181,7 @@ function LandingContent() {
       </Box>
 
       {/* Pagination */}
-      {!watches && (
+      {watches && (
         <Stack sx={{ mt: "2rem" }} alignItems="center">
           <Pagination
             count={5}
