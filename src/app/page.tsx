@@ -41,7 +41,12 @@ export default function Home() {
               borderRadius: "1vw",
             }}
           >
-            <ShoppingCartOutlinedIcon sx={{ mr: { xs: "0.3rem", sm: "0.5rem", md: "0.5rem" }, fontSize: { xs: "18px", sm: "20px", md: "24px" }, }}  />
+            <ShoppingCartOutlinedIcon
+              sx={{
+                mr: { xs: "0.3rem", sm: "0.5rem", md: "0.5rem" },
+                fontSize: { xs: "18px", sm: "20px", md: "24px" },
+              }}
+            />
             View Cart
           </Fab>
         )}
