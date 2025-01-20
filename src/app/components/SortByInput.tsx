@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Box,
   FormControl,
   FormHelperText,
   MenuItem,
@@ -12,10 +11,6 @@ import { sortWatches } from "../store/reducers/watchListSlice";
 
 function SortByInput() {
   const dispatch = useDispatch();
-
-  function handleChangeSortBy(event: React.ChangeEvent<HTMLSelectElement>) {
-    dispatch(sortWatches(event.target.value));
-  }
 
   return (
     <Stack
@@ -35,7 +30,7 @@ function SortByInput() {
         <Select
           id="sort-by"
           defaultValue=""
-          onChange={handleChangeSortBy}
+          onChange={(event) => dispatch(sortWatches(event.target.value))}
           displayEmpty
           sx={{
             height: "3rem",

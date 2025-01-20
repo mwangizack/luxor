@@ -51,7 +51,9 @@ const watchListSlice = createSlice({
       }
     },
     setFilter: (state, action) => {
-      const { filterName, value } = action.payload;
+      type FilterName = keyof typeof state.filters;
+      const { filterName, value }: { filterName: FilterName; value: string } =
+        action.payload;
       state.filters[filterName] = value;
       state.watchesToShow = applyFilters(state.watches, state.filters);
     },

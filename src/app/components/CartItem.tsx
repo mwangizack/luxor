@@ -9,8 +9,9 @@ import {
   decrementQuantity,
   removeFromCart,
 } from "../store/reducers/cartSlice";
+import { Watch } from "../data/watches";
 
-function CartItem({ watch }) {
+function CartItem({ watch }: { watch: Watch }) {
   const dispatch = useDispatch();
 
   function handleIncrementQuantity(watchId: number) {

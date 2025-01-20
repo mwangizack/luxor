@@ -1,5 +1,5 @@
 "use client";
-import { Fab, Typography } from "@mui/material";
+import { Fab } from "@mui/material";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import LandingContent from "./components/LandingContent";

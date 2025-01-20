@@ -11,8 +11,7 @@ import WatchCard from "./WatchCard";
 import { setWatches } from "../store/reducers/watchListSlice";
 import Skeleton from "@mui/material/Skeleton";
 import Pagination from "@mui/material/Pagination";
-
-const axios = require("axios");
+import axios from "axios";
 
 function LandingContent() {
   const dispatch = useDispatch();

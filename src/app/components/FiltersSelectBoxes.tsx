@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  FormControl,
-  MenuItem,
-  Select,
-  Stack,
-} from "@mui/material";
+import { Button, FormControl, MenuItem, Select, Stack } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { setFilter, clearFilters } from "../store/reducers/watchListSlice";
 import FilterAltOffIcon from "@mui/icons-material/FilterAltOff";
@@ -27,22 +20,6 @@ function FiltersSelectBoxes() {
     (state: RootState) => state.watchList.filters.bracelet
   );
 
-  function handleChangeGender(event: React.ChangeEvent<HTMLSelectElement>) {
-    dispatch(setFilter({ filterName: "gender", value: event.target.value }));
-  }
-
-  function handleChangeDialSize(event: React.ChangeEvent<HTMLSelectElement>) {
-    dispatch(setFilter({ filterName: "dialSize", value: event.target.value }));
-  }
-
-  function handleChangeMaterial(event: React.ChangeEvent<HTMLSelectElement>) {
-    dispatch(setFilter({ filterName: "material", value: event.target.value }));
-  }
-
-  function handleChangeBracelet(event: React.ChangeEvent<HTMLSelectElement>) {
-    dispatch(setFilter({ filterName: "bracelet", value: event.target.value }));
-  }
-
   return (
     <Stack
       direction="row"
@@ -61,7 +38,11 @@ function FiltersSelectBoxes() {
       <FormControl sx={{ width: { xs: "40vw", sm: "16vw", md: "13.3vw" } }}>
         <Select
           value={gender}
-          onChange={handleChangeGender}
+          onChange={(event) =>
+            dispatch(
+              setFilter({ filterName: "gender", value: event.target.value })
+            )
+          }
           displayEmpty
           sx={{
             height: "3rem",
@@ -80,7 +61,11 @@ function FiltersSelectBoxes() {
       <FormControl sx={{ width: { xs: "40vw", sm: "16vw", md: "13.3vw" } }}>
         <Select
           value={dialSize}
-          onChange={handleChangeDialSize}
+          onChange={(event) =>
+            dispatch(
+              setFilter({ filterName: "dialSize", value: event.target.value })
+            )
+          }
           displayEmpty
           sx={{
             height: "3rem",
@@ -99,7 +84,11 @@ function FiltersSelectBoxes() {
       <FormControl sx={{ width: { xs: "40vw", sm: "16vw", md: "13.3vw" } }}>
         <Select
           value={material}
-          onChange={handleChangeMaterial}
+          onChange={(event) =>
+            dispatch(
+              setFilter({ filterName: "material", value: event.target.value })
+            )
+          }
           displayEmpty
           sx={{
             height: "3rem",
@@ -122,7 +111,11 @@ function FiltersSelectBoxes() {
       <FormControl sx={{ width: { xs: "40vw", sm: "16vw", md: "13.3vw" } }}>
         <Select
           value={bracelet}
-          onChange={handleChangeBracelet}
+          onChange={(event) =>
+            dispatch(
+              setFilter({ filterName: "bracelet", value: event.target.value })
+            )
+          }
           displayEmpty
           sx={{
             height: "3rem",

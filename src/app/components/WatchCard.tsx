@@ -10,8 +10,9 @@ import {
   decrementQuantity,
 } from "../store/reducers/cartSlice";
 import { RootState } from "../store/store";
+import { Watch } from "../data/watches";
 
-function WatchCard({ watch }) {
+function WatchCard({ watch } : { watch: Watch }) {
   const dispatch = useDispatch();
   const watchesInCart = useSelector((state: RootState) => state.cart.items);
 

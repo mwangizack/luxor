@@ -1,5 +1,5 @@
 "use client";
-import { Box, Button, Link, Stack, Typography } from "@mui/material";
+import { Button, Link, Stack, Typography } from "@mui/material";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import React from "react";
 import { useRouter } from "next/navigation";
@@ -9,7 +9,7 @@ import { RootState } from "../store/store";
 import EmptyCart from "../components/EmptyCart";
 import EastIcon from "@mui/icons-material/East";
 
-function page() {
+function Page() {
   const router = useRouter();
   const watchesInCart = useSelector((state: RootState) => state.cart.items);
   const cartTotal = useSelector((state: RootState) => state.cart.totalPrice);
@@ -164,4 +164,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
