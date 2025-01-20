@@ -32,3 +32,7 @@ As a user, you can:
 2.  Open with a code editor
 3.  Run 'npm install' to install all required dependencies
 4.  Run 'npm run dev' to spin up a local server and view the application in a browser
+
+## Live link
+
+https://luxor-ecommerce.netlify.app/
